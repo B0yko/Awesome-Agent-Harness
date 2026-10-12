@@ -324,6 +324,7 @@
 - <u>AutoGen</u>: **"AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation"**. *Wu et al.* arXiv 2023. [[论文](https://arxiv.org/abs/2308.08155)] [[代码](https://github.com/microsoft/autogen)]
 - <u>ChatDev</u>: **"ChatDev: Communicative Agents for Software Development"**. *Qian et al.* ACL 2024. [[论文](https://arxiv.org/abs/2307.07924)] [[代码](https://github.com/OpenBMB/ChatDev)]
 - <u>CAMEL</u>: **"CAMEL: Communicative Agents for 'Mind' Exploration of Large Language Model Society"**. *Li et al.* NeurIPS 2023. [[论文](https://arxiv.org/abs/2303.17760)] [[代码](https://github.com/camel-ai/camel)]
+- <u>Raven</u>: **"Raven: The Harness of Harnesses for Composable Agentic Intelligence"**. *EverMind AI.* Technical Report 2026. [[论文](https://github.com/EverMind-AI/Raven/releases/download/tech-report-v1/technical-report.pdf)] [[代码](https://github.com/EverMind-AI/Raven)]
 
 #### 框架与模块
 
