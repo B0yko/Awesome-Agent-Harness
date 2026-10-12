@@ -150,6 +150,8 @@ We introduce a formal definition of the **agent execution harness** as a six-com
 
 **Legend:** ✓ full support · ≈ partial · ✗ absent
 
+The current matrix covers **29 systems** and grows with this resource list.
+
 <table align="center">
   <thead>
     <tr>
@@ -165,9 +167,21 @@ We introduce a formal definition of the **agent execution harness** as a six-com
   </thead>
   <tbody>
     <tr>
-      <td rowspan="4"><strong>Full-Stack<br>Harnesses</strong></td>
+      <td rowspan="7"><strong>Full-Stack<br>Harnesses</strong></td>
       <td>Claude Code</td>
       <td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>≈</td>
+    </tr>
+    <tr>
+      <td>Codex</td>
+      <td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>≈</td>
+    </tr>
+    <tr>
+      <td>DeepSeek Harness</td>
+      <td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>≈</td>
+    </tr>
+    <tr>
+      <td>SandBase Harness</td>
+      <td>✓</td><td>✓</td><td>≈</td><td>✓</td><td>✓</td><td>≈</td>
     </tr>
     <tr>
       <td>OpenClaw / PRISM</td>
@@ -220,13 +234,17 @@ We introduce a formal definition of the **agent execution harness** as a six-com
       <td>≈</td><td>✓</td><td>✓</td><td>≈</td><td>✗</td><td>✗</td>
     </tr>
     <tr>
-      <td rowspan="2"><strong>Specialized<br>Harnesses</strong></td>
+      <td rowspan="3"><strong>Specialized<br>Harnesses</strong></td>
       <td>SWE-agent</td>
       <td>✓</td><td>✓</td><td>✓</td><td>≈</td><td>≈</td><td>✓</td>
     </tr>
     <tr>
       <td>agent-qa</td>
       <td>✓</td><td>✓</td><td>≈</td><td>✓</td><td>✓</td><td>✓</td>
+    </tr>
+    <tr>
+      <td>YYLO</td>
+      <td>✓</td><td>≈</td><td>≈</td><td>✓</td><td>✓</td><td>≈</td>
     </tr>
     <tr>
       <td rowspan="5"><strong>Capability<br>Modules</strong></td>
@@ -250,7 +268,7 @@ We introduce a formal definition of the **agent execution harness** as a six-com
       <td>✓</td><td>✗</td><td>≈</td><td>✓</td><td>✗</td><td>≈</td>
     </tr>
     <tr>
-      <td rowspan="4"><strong>Evaluation<br>Infrastructure</strong></td>
+      <td rowspan="5"><strong>Evaluation<br>Infrastructure</strong></td>
       <td>HAL</td>
       <td>✓</td><td>✓</td><td>≈</td><td>≈</td><td>≈</td><td>✓</td>
     </tr>
@@ -265,6 +283,10 @@ We introduce a formal definition of the **agent execution harness** as a six-com
     <tr>
       <td>BrowserGym</td>
       <td>✓</td><td>✓</td><td>≈</td><td>≈</td><td>✗</td><td>✓</td>
+    </tr>
+    <tr>
+      <td>YYLO Benchmark</td>
+      <td>≈</td><td>✗</td><td>≈</td><td>✓</td><td>≈</td><td>✓</td>
     </tr>
   </tbody>
 </table>
@@ -305,6 +327,9 @@ We introduce a formal definition of the **agent execution harness** as a six-com
 
 #### Full-Stack Harnesses
 
+- <u>Codex</u>: **"Codex: Lightweight coding agent that runs in your terminal"**. *OpenAI.* GitHub. [[Code](https://github.com/openai/codex)]
+- <u>DeepSeek Harness</u>: **"DeepSeek Harness: Everything is a Plugin"**. *DeepSeek-AI.* GitHub 2026. [[Code](https://github.com/deepseek-ai/deepseek-harness)]
+- <u>SandBase Harness</u>: **"SandBase Harness: Local-first, self-hosted AI agent runtime and MCP bridge"**. *SandBase AI.* GitHub 2026. [[Code](https://github.com/sandbaseai/sandbase-harness)]
 - <u>PRISM/OpenClaw</u>: **"OpenClaw PRISM: A Zero-Fork, Defense-in-Depth Runtime Security Layer for Tool-Augmented LLM Agents"**. *Li.* arXiv 2026. [[Paper](https://arxiv.org/abs/2603.11853)]
 - <u>AIOS</u>: **"AIOS: LLM Agent Operating System"**. *Mei et al.* COLM 2025. [[Paper](https://arxiv.org/abs/2403.16971)] [[Code](https://github.com/agiresearch/AIOS)]
 - <u>AOHP</u>: **"AOHP: An Open-Source OS-Level Agent Harness for Personalized, Efficient and Secure Interaction"**. arXiv 2026. [[Paper](https://arxiv.org/abs/2606.23449)] [[Code](https://github.com/aohp-os/aohp)]
@@ -312,12 +337,18 @@ We introduce a formal definition of the **agent execution harness** as a six-com
 - <u>SWE-agent</u>: **"SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering"**. *Yang et al.* NeurIPS 2024. [[Paper](https://arxiv.org/abs/2405.15793)] [[Code](https://github.com/SWE-agent/SWE-agent)]
 - <u>HAL</u>: **"Holistic Agent Leaderboard: The Missing Infrastructure for AI Agent Evaluation"**. *Kapoor et al.* ICLR 2026. [[Paper](https://arxiv.org/abs/2510.11977)]
 
+
+**Codex — an integrated execution harness for software engineering.** Codex connects repository exploration, editing, command execution, and verification through a shared agent runtime. Its execution loop (E) coordinates model requests and tool results; the tool registry (T) dispatches built-in tools and MCP integrations; context compaction (C) manages growing conversation histories; and persisted rollouts and resumable threads (S) carry work across sessions. Tool orchestration brings approval decisions, sandbox selection, and retry handling into the execution path (L), while structured events and tool traces support inspection and evaluation (V). This makes Codex a representative example of how the harness turns a model's coding ability into a sustained development workflow. [[Core](https://github.com/openai/codex/tree/main/codex-rs/core)] [[Tool Orchestration](https://github.com/openai/codex/blob/main/codex-rs/core/src/tools/orchestrator.rs)]
+
+**DeepSeek Harness — composable runtime governance through plugins.** DeepSeek Harness makes the model adapter, agent loop, tool registry, session log, and surrounding capabilities replaceable plugins built on Cordis. Profiles and bundles assemble these components into an executable system. The default loop (E) coordinates turns and steps, typed tools (T) pass through validation and pre/post-execution hooks (L), and the durable session log (S) supplies the history from which model context is projected. Prompt assembly and compaction plugins govern that context (C); typed session events and telemetry expose execution traces (V). Its architectural contribution to the survey is the explicit separation of governance functions from their implementations: developers can change the loop, context policy, or tool behavior by composing plugins around shared interfaces. [[Architecture](https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/architecture.md)] [[Tools](https://github.com/deepseek-ai/deepseek-harness/blob/master/packages/core/tools/README.md)] [[Compaction](https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/subsystems/compaction.md)]
+
 #### Multi-Agent Harnesses
 
 - <u>MetaGPT</u>: **"MetaGPT: Meta Programming for a Multi-Agent Collaborative Framework"**. *Hong et al.* ICLR 2024. [[Paper](https://arxiv.org/abs/2308.00352)] [[Code](https://github.com/geekan/MetaGPT)]
 - <u>AutoGen</u>: **"AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation"**. *Wu et al.* arXiv 2023. [[Paper](https://arxiv.org/abs/2308.08155)] [[Code](https://github.com/microsoft/autogen)]
 - <u>ChatDev</u>: **"ChatDev: Communicative Agents for Software Development"**. *Qian et al.* ACL 2024. [[Paper](https://arxiv.org/abs/2307.07924)] [[Code](https://github.com/OpenBMB/ChatDev)]
 - <u>CAMEL</u>: **"CAMEL: Communicative Agents for 'Mind' Exploration of Large Language Model Society"**. *Li et al.* NeurIPS 2023. [[Paper](https://arxiv.org/abs/2303.17760)] [[Code](https://github.com/camel-ai/camel)]
+- <u>Raven</u>: **"Raven: The Harness of Harnesses for Composable Agentic Intelligence"**. *EverMind AI.* Technical Report 2026. [[Paper](https://github.com/EverMind-AI/Raven/releases/download/tech-report-v1/technical-report.pdf)] [[Code](https://github.com/EverMind-AI/Raven)]
 
 #### Frameworks & Modules
 
@@ -335,11 +366,13 @@ We introduce a formal definition of the **agent execution harness** as a six-com
 - <u>LlamaIndex</u>: **"LlamaIndex: A Data Framework for LLM Applications"**. *Liu et al.* GitHub 2022. [[Code](https://github.com/run-llama/llama_index)]
 - <u>DeerFlow</u>: **"DeerFlow: Distributed Workflow Engine for LLM Agents"**. *GitHub 2024.* [[Code](https://github.com/modelscope/DeerFlow)]
 - <u>DeepAgents</u>: **"DeepAgents: Multi-Agent Framework for Deep Learning"**. *GitHub 2024.* [[Code](https://github.com/deepagents/deepagents)]
+- <u>YYLO</u>: **"YYLO: AI Coding-Agent Orchestration CLI"**. *yylo-dev.* GitHub 2026. [[Code](https://github.com/yylo-dev/yylo)]
 
 #### Evaluation Infrastructure
 
 - <u>lm-evaluation-harness</u>: **"lm-evaluation-harness"**. *Gao et al.* GitHub 2021. [[Code](https://github.com/EleutherAI/lm-evaluation-harness)]
 - <u>agent-qa</u>: **"agent-qa: Self-Improving QA Harness with Memory"**. *Vostride.* GitHub 2026. [[Code](https://github.com/vostride/agent-qa)]
+- <u>YYLO Benchmark</u>: **"YYLO Benchmark: Longitudinal Evaluation and Immutable Evidence for Agent Runs"**. *yylo-dev.* GitHub 2026. [[Code](https://github.com/yylo-dev/yylo-benchmark)]
 - <u>API-Bank</u>: **"Api-bank: A comprehensive benchmark for tool-augmented llms"**. *Li et al.* EMNLP 2023. [[Paper](https://aclanthology.org/2023.emnlp-main.187/)]
 - <u>AgentBench</u>: **"AgentBench: Evaluating LLMs as Agents"**. *Liu et al.* ICLR 2024. [[Paper](https://arxiv.org/abs/2308.03688)] [[Code](https://github.com/THUDM/AgentBench)]
 - <u>SWE-bench</u>: **"SWE-bench: Can Language Models Resolve Real-World GitHub Issues?"**. *Jimenez et al.* ICLR 2024. [[Paper](https://arxiv.org/abs/2310.06770)] [[Code](https://github.com/swebench/SWE-bench)]
@@ -412,6 +445,8 @@ We introduce a formal definition of the **agent execution harness** as a six-com
 - <u>Evaluation Survey</u>: **"Evaluation and Benchmarking of LLM Agents: A Survey"**. *Mohammadi et al.* KDD 2025. [[Paper](https://arxiv.org/abs/2507.21504)]
 - <u>PentestJudge</u>†: **"PentestJudge: Judging Agent Behavior Against Operational Requirements"**. *Caldwell et al.* arXiv 2025. [[Paper](https://arxiv.org/abs/2508.02921)]
 - <u>PerspectiveGap</u>†: **"PerspectiveGap: A Benchmark for Multi-Agent Orchestration Prompting"**. *Sun et al.* arXiv 2026. [[Paper](https://arxiv.org/abs/2606.08878)] [[Code](https://github.com/WhymustIhaveaname/PerspectiveGap)]
+- <u>TraceDance</u>†: **"TraceDance: An Automated System for Building Agent Behavior Benchmarks from Real-World Agent Deployment Traces"**. *Min et al.* arXiv 2026. [[Paper](https://arxiv.org/abs/2609.33295)] [[Project](https://zhishanq.github.io/TraceDance/)]
+  - Constructs behavior-specific benchmarks from deployment traces and scores an LLM's next turn in a fixed recorded harness context, without executing its actions or replaying the environment.
 
 #### Protocol Standardization
 
@@ -476,6 +511,7 @@ We introduce a formal definition of the **agent execution harness** as a six-com
 - <u>Inner Monologue</u>: **"Inner Monologue: Embodied Reasoning Through Planning with Language Models"**. *Huang et al.* CoRL 2022. [[Paper](https://arxiv.org/abs/2207.05608)]
 - <u>Agent-Oriented Planning</u>: **"Agent-Oriented Planning in Multi-Agent Systems"**. *Li et al.* ICLR 2025. [[Paper](https://arxiv.org/abs/2410.02189)]
 - <u>ExACT</u>†: **"ExACT: Teaching AI Agents to Explore with Reflective-MCTS and Exploratory Learning"**. *Yu et al.* arXiv 2024. [[Paper](https://arxiv.org/abs/2410.02052)]
+- <u>Steer, Don't Solve</u>†: **"Steer, Don't Solve: Training Small Critic Models for Large Code Agents"**. *Gandhi et al.* arXiv 2026. [[Paper](https://arxiv.org/abs/2606.21811)] [[Code](https://github.com/shubhamrgandhi/critic-training)]
 
 #### Multi-Agent Coordination
 
@@ -507,11 +543,13 @@ We introduce a formal definition of the **agent execution harness** as a six-com
 - <u>NVIDIA GTC 2026</u>: **"NVIDIA GTC 2026: Live Updates on What's Next in AI"**. *NVIDIA.* NVIDIA Blog, March 2026. [[Blog](https://blogs.nvidia.com/blog/gtc-2026-news/)]
 - <u>Repo2Run</u>†: **"Repo2Run: Automated Building Executable Environment for Code Repository at Scale"**. *Hu et al.* arXiv 2025. [[Paper](https://arxiv.org/abs/2502.13681)]
 - <u>Policy-First</u>†: **"Guardrails as Infrastructure: Policy-First Control for Tool-Orchestrated Workflows"**. *Sigdel & Baral.* arXiv 2026. [[Paper](https://arxiv.org/abs/2603.18059)]
+- <u>Strong-Weak Collaboration</u>: **"An Empirical Study on Strong-Weak Model Collaboration for Repo-level Code Generation"**. *Gandhi et al.* EMNLP 2025. [[Paper](https://aclanthology.org/2025.emnlp-main.1043/)] [[Code](https://github.com/shubhamrgandhi/codegen-strong-weak-collab)]
 
 ---
 
 ### Emerging Topics
 
+- <u>AutoRef</u>†: **"AutoRef: Harness Optimization for Agentic Multi-Reference Image Generation"**. *Oshima et al.* arXiv 2026. [[Paper](https://arxiv.org/abs/2609.35530)] [[Code](https://github.com/KuOnoda/AutoRef)]
 - <u>Harness Engineering for Language Agents</u>†: **"Harness Engineering for Language Agents: The Harness Layer as Control, Agency, and Runtime"**. *He et al.* Preprints 2026. [[Paper](https://www.preprints.org)]
 - <u>DeepAgent</u>†: **"Deepagent: A general reasoning agent with scalable toolsets"**. *Li et al.* arXiv 2025. [[Paper](https://arxiv.org/abs/2510.21618)]
 - <u>Natural-Language Harnesses</u>†: **"Natural-Language Agent Harnesses"**. *Pan et al.* arXiv 2026. [[Paper](https://arxiv.org/abs/2603.25723)]
@@ -527,6 +565,8 @@ We introduce a formal definition of the **agent execution harness** as a six-com
 - <u>LLM Survey</u>: **"A Survey of Large Language Models"**. *Zhao et al.* arXiv 2023. [[Paper](https://arxiv.org/abs/2303.18223)]
 - <u>AI Agent Systems</u>†: **"AI Agent Systems: Architectures, Applications, and Evaluation"**. *Xu.* arXiv 2025. [[Paper](https://arxiv.org/abs/2601.01743)]
 - <u>AutoResearch Survey</u>†: **"What's Missing in Autonomous Research? A Systematization of Systems, Benchmarks, and Verification"**. *Ren et al.* 2026. [[Paper](https://www.researchgate.net/publication/406952713)]
+- <u>LLM Agents: A Survey</u>†: **"LLM Agents: A Survey"**. *Lee.* Preprints.org 2026. [[Paper](https://www.preprints.org/manuscript/202608.0265/v1)]
+- <u>The Agent Loop</u>†: **"The Agent Loop: A Survey of Control Strategies, Skills, and Harnesses for LLM Agents"**. *Lee and Park.* SSRN 2026. [[Paper](https://ssrn.com/abstract=7186738)]
 
 #### Practitioner Reports & Industry Insights
 
@@ -544,6 +584,8 @@ We introduce a formal definition of the **agent execution harness** as a six-com
 - <u>Harness Engineering (OpenAI)</u>: **"Harness engineering: leveraging Codex in an agent-first world"**. *Lopopolo.* OpenAI Blog, Feb 2026. [[Blog](https://openai.com/index/harness-engineering/)]
 - <u>Self-Driving Codebases</u>: **"Towards self-driving codebases"**. *Lin.* Cursor Blog, Feb 2026. [[Blog](https://cursor.com/blog/self-driving-codebases)]
 - <u>METR SWE-bench Analysis</u>: **"Many SWE-bench-Passing PRs Would Not Be Merged into Main"**. *Whitfill et al.* METR Notes, Mar 2026. [[Report](https://metr.org/notes/2026-03-10-many-swe-bench-passing-prs-would-not-be-merged-into-main/)]
+
+- <u>Harness-Aware Training</u>†: **"Training Agents to Evolve with Their Harness: TaoLive Digital Avatar Agent Technical Report"**. *TaoLive AIGC LLM Team.* arXiv, August 2026. [[Paper](https://arxiv.org/abs/2608.15763)]
 
 ---
 
