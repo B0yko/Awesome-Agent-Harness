@@ -150,6 +150,8 @@ We introduce a formal definition of the **agent execution harness** as a six-com
 
 **Legend:** ✓ full support · ≈ partial · ✗ absent
 
+The current matrix covers **29 systems** and grows with this resource list.
+
 <table align="center">
   <thead>
     <tr>
@@ -165,9 +167,21 @@ We introduce a formal definition of the **agent execution harness** as a six-com
   </thead>
   <tbody>
     <tr>
-      <td rowspan="4"><strong>Full-Stack<br>Harnesses</strong></td>
+      <td rowspan="7"><strong>Full-Stack<br>Harnesses</strong></td>
       <td>Claude Code</td>
       <td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>≈</td>
+    </tr>
+    <tr>
+      <td>Codex</td>
+      <td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>≈</td>
+    </tr>
+    <tr>
+      <td>DeepSeek Harness</td>
+      <td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>≈</td>
+    </tr>
+    <tr>
+      <td>SandBase Harness</td>
+      <td>✓</td><td>✓</td><td>≈</td><td>✓</td><td>✓</td><td>≈</td>
     </tr>
     <tr>
       <td>OpenClaw / PRISM</td>
@@ -313,12 +327,20 @@ We introduce a formal definition of the **agent execution harness** as a six-com
 
 #### Full-Stack Harnesses
 
+- <u>Codex</u>: **"Codex: Lightweight coding agent that runs in your terminal"**. *OpenAI.* GitHub. [[Code](https://github.com/openai/codex)]
+- <u>DeepSeek Harness</u>: **"DeepSeek Harness: Everything is a Plugin"**. *DeepSeek-AI.* GitHub 2026. [[Code](https://github.com/deepseek-ai/deepseek-harness)]
+- <u>SandBase Harness</u>: **"SandBase Harness: Local-first, self-hosted AI agent runtime and MCP bridge"**. *SandBase AI.* GitHub 2026. [[Code](https://github.com/sandbaseai/sandbase-harness)]
 - <u>PRISM/OpenClaw</u>: **"OpenClaw PRISM: A Zero-Fork, Defense-in-Depth Runtime Security Layer for Tool-Augmented LLM Agents"**. *Li.* arXiv 2026. [[Paper](https://arxiv.org/abs/2603.11853)]
 - <u>AIOS</u>: **"AIOS: LLM Agent Operating System"**. *Mei et al.* COLM 2025. [[Paper](https://arxiv.org/abs/2403.16971)] [[Code](https://github.com/agiresearch/AIOS)]
 - <u>AOHP</u>: **"AOHP: An Open-Source OS-Level Agent Harness for Personalized, Efficient and Secure Interaction"**. arXiv 2026. [[Paper](https://arxiv.org/abs/2606.23449)] [[Code](https://github.com/aohp-os/aohp)]
 - <u>OpenHands</u>: **"OpenHands: An Open Platform for AI Software Developers as Generalist Agents"**. *Wang et al.* ICLR 2025. [[Paper](https://arxiv.org/abs/2407.16741)] [[Code](https://github.com/All-Hands-AI/OpenHands)]
 - <u>SWE-agent</u>: **"SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering"**. *Yang et al.* NeurIPS 2024. [[Paper](https://arxiv.org/abs/2405.15793)] [[Code](https://github.com/SWE-agent/SWE-agent)]
 - <u>HAL</u>: **"Holistic Agent Leaderboard: The Missing Infrastructure for AI Agent Evaluation"**. *Kapoor et al.* ICLR 2026. [[Paper](https://arxiv.org/abs/2510.11977)]
+
+
+**Codex — an integrated execution harness for software engineering.** Codex connects repository exploration, editing, command execution, and verification through a shared agent runtime. Its execution loop (E) coordinates model requests and tool results; the tool registry (T) dispatches built-in tools and MCP integrations; context compaction (C) manages growing conversation histories; and persisted rollouts and resumable threads (S) carry work across sessions. Tool orchestration brings approval decisions, sandbox selection, and retry handling into the execution path (L), while structured events and tool traces support inspection and evaluation (V). This makes Codex a representative example of how the harness turns a model's coding ability into a sustained development workflow. [[Core](https://github.com/openai/codex/tree/main/codex-rs/core)] [[Tool Orchestration](https://github.com/openai/codex/blob/main/codex-rs/core/src/tools/orchestrator.rs)]
+
+**DeepSeek Harness — composable runtime governance through plugins.** DeepSeek Harness makes the model adapter, agent loop, tool registry, session log, and surrounding capabilities replaceable plugins built on Cordis. Profiles and bundles assemble these components into an executable system. The default loop (E) coordinates turns and steps, typed tools (T) pass through validation and pre/post-execution hooks (L), and the durable session log (S) supplies the history from which model context is projected. Prompt assembly and compaction plugins govern that context (C); typed session events and telemetry expose execution traces (V). Its architectural contribution to the survey is the explicit separation of governance functions from their implementations: developers can change the loop, context policy, or tool behavior by composing plugins around shared interfaces. [[Architecture](https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/architecture.md)] [[Tools](https://github.com/deepseek-ai/deepseek-harness/blob/master/packages/core/tools/README.md)] [[Compaction](https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/subsystems/compaction.md)]
 
 #### Multi-Agent Harnesses
 
@@ -521,13 +543,13 @@ We introduce a formal definition of the **agent execution harness** as a six-com
 - <u>NVIDIA GTC 2026</u>: **"NVIDIA GTC 2026: Live Updates on What's Next in AI"**. *NVIDIA.* NVIDIA Blog, March 2026. [[Blog](https://blogs.nvidia.com/blog/gtc-2026-news/)]
 - <u>Repo2Run</u>†: **"Repo2Run: Automated Building Executable Environment for Code Repository at Scale"**. *Hu et al.* arXiv 2025. [[Paper](https://arxiv.org/abs/2502.13681)]
 - <u>Policy-First</u>†: **"Guardrails as Infrastructure: Policy-First Control for Tool-Orchestrated Workflows"**. *Sigdel & Baral.* arXiv 2026. [[Paper](https://arxiv.org/abs/2603.18059)]
-- <u>Strong-Weak Collaboration</u>: **"An Empirical Study on Strong-Weak Model Collaboration for Repo-level Code Generation"**. *Gandhi et al.* EMNLP 2025. [[Paper](https://arxiv.org/abs/2505.20182)] [[Code](https://github.com/shubhamrgandhi/codegen-strong-weak-collab)]
+- <u>Strong-Weak Collaboration</u>: **"An Empirical Study on Strong-Weak Model Collaboration for Repo-level Code Generation"**. *Gandhi et al.* EMNLP 2025. [[Paper](https://aclanthology.org/2025.emnlp-main.1043/)] [[Code](https://github.com/shubhamrgandhi/codegen-strong-weak-collab)]
 
 ---
 
 ### Emerging Topics
 
-- <u>AutoRef</u>†: **"AutoRef: Harness Optimization for Agentic Multi-Reference Image Generation"**. *Oshima et al.* arXiv 2026. [[Paper](https://arxiv.org/abs/2609.35530)]
+- <u>AutoRef</u>†: **"AutoRef: Harness Optimization for Agentic Multi-Reference Image Generation"**. *Oshima et al.* arXiv 2026. [[Paper](https://arxiv.org/abs/2609.35530)] [[Code](https://github.com/KuOnoda/AutoRef)]
 - <u>Harness Engineering for Language Agents</u>†: **"Harness Engineering for Language Agents: The Harness Layer as Control, Agency, and Runtime"**. *He et al.* Preprints 2026. [[Paper](https://www.preprints.org)]
 - <u>DeepAgent</u>†: **"Deepagent: A general reasoning agent with scalable toolsets"**. *Li et al.* arXiv 2025. [[Paper](https://arxiv.org/abs/2510.21618)]
 - <u>Natural-Language Harnesses</u>†: **"Natural-Language Agent Harnesses"**. *Pan et al.* arXiv 2026. [[Paper](https://arxiv.org/abs/2603.25723)]
@@ -563,7 +585,7 @@ We introduce a formal definition of the **agent execution harness** as a six-com
 - <u>Self-Driving Codebases</u>: **"Towards self-driving codebases"**. *Lin.* Cursor Blog, Feb 2026. [[Blog](https://cursor.com/blog/self-driving-codebases)]
 - <u>METR SWE-bench Analysis</u>: **"Many SWE-bench-Passing PRs Would Not Be Merged into Main"**. *Whitfill et al.* METR Notes, Mar 2026. [[Report](https://metr.org/notes/2026-03-10-many-swe-bench-passing-prs-would-not-be-merged-into-main/)]
 
-- <u>Harness-Aware Training</u>: **"Training Agents to Evolve with Their Harness: TaoLive Digital Avatar Agent Technical Report"**. *TaoLive AIGC LLM Team.* arXiv, August 2026. [[Paper](https://arxiv.org/abs/2608.15763)]
+- <u>Harness-Aware Training</u>†: **"Training Agents to Evolve with Their Harness: TaoLive Digital Avatar Agent Technical Report"**. *TaoLive AIGC LLM Team.* arXiv, August 2026. [[Paper](https://arxiv.org/abs/2608.15763)]
 
 ---
 
