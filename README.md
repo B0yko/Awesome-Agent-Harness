@@ -7,7 +7,7 @@
 ### Official paper repository and living evidence index
 
 [![GitHub Stars](https://img.shields.io/github/stars/Gloriaameng/Awesome-Agent-Harness?style=social)](https://github.com/Gloriaameng/Awesome-Agent-Harness)
-[![References](https://img.shields.io/badge/References-156-2b8a3e)](#5-research-library)
+[![References](https://img.shields.io/badge/References-162-2b8a3e)](#5-research-library)
 [![License](https://img.shields.io/badge/License-CC--BY--4.0-blue.svg)](license)
 
 </div>
@@ -16,7 +16,7 @@
 
 This is the official repository for **_Agent Harness for Large Language Model Agents: A Survey_**. The paper is the center of the project: it defines the object of study, introduces the ETCSLV analytical framework, reconstructs the field's historical lineages, compares representative systems, and sets an evaluation and research agenda. The resource index below keeps the survey's evidence base current between paper releases.
 
-📄 **[Paper v4](./Agent_Harness_for_LLM_Agents__A_Survey__v4.pdf)** · 🌐 **[Archived preprint v3](https://www.preprints.org/manuscript/202604.0428/v3)** · 🗂️ **Resource Index 2026.10** (evidence through 2026-10-12) · **Paper v5 is in revision**
+📄 **[Paper v4](./Agent_Harness_for_LLM_Agents__A_Survey__v4.pdf)** · 🌐 **[Archived preprint v3](https://www.preprints.org/manuscript/202604.0428/v3)** · 🗂️ **Resource Index 2026.10** (evidence through 2026-10-13) · **Paper v5 is in revision**
 
 [Survey contributions](#what-this-survey-contributes) · [Framework](#1-conceptual-framework) · [Systems](#3-system-landscape) · [Benchmarks](#4-evaluation-landscape) · [Research library](#5-research-library)
 
@@ -52,7 +52,7 @@ Most agent reports foreground the model and task score while leaving the runtime
 1. **A joint unit of analysis.** Agent behavior is studied at the **model–harness–environment** level, so results can be attributed to the configuration that produced them.
 2. **A shared architectural lens.** **ETCSLV** organizes recurring harness functions into execution, tools, context, state, lifecycle, and evaluation.
 3. **A historical account.** The survey connects software test harnesses, reinforcement-learning environments, early LLM-agent frameworks, and today's persistent agent runtimes.
-4. **A comparable system landscape.** Twenty core systems are assessed with the same evidence-coded component matrix, with Claude Code, Codex, DeepSeek Harness, and OpenClaw as equal-depth anchor cases.
+4. **A comparable system landscape.** Twenty-eight systems are assessed with the same evidence-coded component matrix, including coding, application-runtime, workplace, personal-agent, OS, and meta-harness routes. The set remains open as public evidence improves; Claude Code, Codex, DeepSeek Harness, and OpenClaw receive equal-depth treatment as anchor cases.
 5. **An evaluation map.** Harness-effect benchmarks, lifecycle and security tests, long-horizon recovery, protocol benchmarks, evaluation infrastructure, and task environments are separated by what they actually vary.
 6. **A research agenda for evolving runtimes.** The survey connects context, memory, tools, security, observability, and cost to harness evolution and bounded runtime self-improvement.
 
@@ -63,15 +63,17 @@ Most agent reports foreground the model and task score while leaving the runtime
 - **Long-horizon agents turn traces and lifecycle events into research objects.** Final-task success alone cannot explain recovery, policy decisions, accumulated state, or regressions.
 - **Runtime self-improvement needs an outer evaluation loop.** Persistent changes should be isolated, tested on held-out tasks, versioned, gated for safety and cost, and reversible.
 
-## How to Read This Repository
+## Survey and Repository Map
+
+The README follows the survey's argument rather than presenting a detached software catalog. Read the numbered sections in order for the conceptual account; use each directory as the maintained evidence layer behind that part of the paper.
 
 | Survey question | Repository section | What you will find |
 |---|---|---|
 | What is the harness layer? | [1. Conceptual Framework](#1-conceptual-framework) | Model–harness–environment boundary and ETCSLV |
 | Where did this architecture come from? | [2. Historical Evolution](#2-historical-evolution) | Test harness, RL environment, LLM-agent, and runtime lineages |
-| Which systems implement it? | [3. System Landscape](#3-system-landscape) | Four anchor cases, 20-system matrix, core and extended directories |
+| Which systems implement it? | [3. System Landscape](#3-system-landscape) | Four anchor cases, an open 28-system evidence matrix, and a categorized directory |
 | How should it be evaluated? | [4. Evaluation Landscape](#4-evaluation-landscape) | 30 direct harness benchmarks, evaluation infrastructure, and task environments |
-| What evidence supports each engineering problem? | [5. Research Library](#5-research-library) | 156 papers and reports on security, context, tools, memory, planning, coordination, and cost |
+| What evidence supports each engineering problem? | [5. Research Library](#5-research-library) | 162 papers, specifications, architecture notes, and reports organized by engineering problem |
 | How were entries selected and how does this relate to the paper? | [About the Survey](#about-the-survey) | Evidence rules, versions, citation, and contribution guide |
 
 ---
@@ -114,13 +116,13 @@ We analyze a harness as **H = (E, T, C, S, L, V)**: six governance functions tha
 | 2024 | Model Context Protocol | Standardized a growing part of the tool-to-harness boundary |
 | 2025 | HAL, AIOS, LangGraph, A2A | Advanced evaluation infrastructure, agent OS design, durable graphs, and agent interoperability |
 | 2025 | MemoryOS, AgentBound† | Developed memory abstractions and runtime enforcement |
-| 2026 | Antigravity, Harness-Bench, WildClawBench, HarnessX, LongHorizon-Harness, HarnessAudit-Bench, SCLATE | Made harness choice, evolution, long-horizon operation, lifecycle risk, and auditability direct objects of study |
+| 2026 | Antigravity, WorkBuddy, Muse, Harness-Bench, HarnessX, LongHorizon-Harness, HarnessAudit-Bench, SCLATE | Expanded harnesses across coding, workplace, and personal agents while making harness choice, evolution, long-horizon operation, lifecycle risk, and auditability direct objects of study |
 
 ---
 
 ## 3. System Landscape
 
-The system landscape moves from depth to breadth: four anchor cases expose the runtime in detail, the core matrix applies one comparison scheme, and the directory expands to adjacent architectures and modules.
+The system landscape moves from depth to breadth: four anchor cases expose the runtime in detail, the evidence matrix applies one comparison scheme, and the directory preserves the wider ecosystem of systems, substrates, modules, and evaluation infrastructure. The comparison set is evidence-driven and open-ended; 28 is the current result of the inclusion rule, not a target or a claim of completeness. Product form is not an exclusion rule: workplace and personal agents belong when their runtime architecture is documented well enough to assess.
 
 ### Four Anchor Systems
 
@@ -131,7 +133,7 @@ These four systems are the survey's anchor cases. They receive the same analytic
 - **[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)** — A plugin-native runtime in which model adapters, loops, tools, context projection, storage, telemetry, and interfaces are composed through profiles, bundles, and ordered patches. These boundaries let teams replace and audit the loop, context policy, tool behavior, and observability separately. The [architecture](https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/architecture.md), [tool subsystem](https://github.com/deepseek-ai/deepseek-harness/blob/master/packages/core/tools/README.md), and [compaction design](https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/subsystems/compaction.md) also provide a concrete base for bounded, evaluated, reversible harness-level improvement.
 - **[OpenClaw](https://github.com/openclaw/openclaw)** — An always-on personal-agent harness organized around channels, sessions, tools, skills, memory, scheduled work, gateway routing, and sandboxed execution. It makes deployment continuity central: identity, credentials, background jobs, workspace state, and operational policy persist beyond a single chat turn. That operating model makes it a key case for studying durable personal agents rather than one-shot assistants.
 
-### Core Comparison Matrix
+### Evidence-Coded Comparison Matrix
 
 Ratings describe documented component coverage at the evidence cutoff. Quality, production maturity, and adoption are reported separately; popularity and stars serve only as adoption signals.
 
@@ -151,22 +153,30 @@ Ratings describe documented component coverage at the evidence cutoff. Quality, 
 | Coding harnesses | **OpenHands** | ● | ● | ● | ● | ● | ◐ |
 | Coding harnesses | **Deep Agents** | ● | ● | ● | ● | ● | ● |
 | Coding harnesses | **Prime Agent** | ● | ● | ● | ● | ◐ | ◐ |
+| Coding harnesses | **GitHub Copilot in VS Code** | ● | ● | ● | ● | ● | ● |
+| Coding harnesses | **MiMo-Code** | ● | ● | ● | ● | ● | ● |
 | General runtimes | **OpenAI Agents SDK** | ● | ● | ● | ● | ● | ● |
 | General runtimes | **Google ADK** | ● | ● | ● | ● | ● | ● |
 | General runtimes | **Microsoft Agent Framework** | ● | ● | ● | ● | ● | ● |
 | General runtimes | **LangGraph** | ● | ◐ | ◐ | ● | ◐ | ◐ |
-| Other representative routes | **DeerFlow** | ● | ● | ● | ● | ● | ◐ |
-| Other representative routes | **AIOS** | ● | ● | ● | ● | ● | ◐ |
-| Other representative routes | **AOHP** | ● | ● | ● | ● | ● | ◐ |
-| Other representative routes | **Omnigent** | ● | ● | ◐ | ● | ● | ◐ |
+| General runtimes | **Mastra** | ● | ● | ● | ● | ● | ● |
+| Persistent, meta, and operational harnesses | **DeerFlow** | ● | ● | ● | ● | ● | ◐ |
+| Persistent, meta, and operational harnesses | **AOHP** | ● | ● | ● | ● | ● | ◐ |
+| Persistent, meta, and operational harnesses | **Omnigent** | ● | ● | ◐ | ● | ● | ◐ |
+| Persistent, meta, and operational harnesses | **TrueForge** | ● | ● | ● | ● | ● | ● |
+| Persistent, meta, and operational harnesses | **LongHorizon-Harness** | ● | ◐ | ● | ● | ● | ● |
+| Persistent, meta, and operational harnesses | **Hermes Agent** | ● | ● | ● | ● | ● | ● |
+| Persistent, meta, and operational harnesses | **SandBase** | ● | ● | ◐ | ● | ● | ● |
+| Workplace and personal-agent harnesses | **WorkBuddy** | ● | ● | ● | ● | ● | ◐ |
+| Workplace and personal-agent harnesses | **Muse** | ● | ● | ● | ● | ● | ● |
 
 ### System Directory
 
-The **20-system core set** supports like-for-like architectural comparison. The extended catalog preserves important systems and adjacent routes while keeping maturity judgments separate.
+The matrix includes every current system for which first-party material is sufficient to rate the six components at a useful level. It is neither a top-28 list nor a maturity ranking. Systems with a different analysis unit, incomplete evidence, or a narrower capability remain visible in the categorized directory below.
 
-#### Core coding harnesses
+#### Compared coding harnesses
 
-The four featured systems above are joined by eight coding harnesses in the core comparison set.
+The four featured systems above are joined by ten coding harnesses in the comparison set.
 
 - **[Antigravity CLI](https://antigravity.google/blog/introducing-google-antigravity-2?hl=en)** — Google's current coding harness, with dynamic subagents, asynchronous tasks, skills, hooks, project permissions, scheduled work, and a CLI that carries these controls into terminal workflows. It succeeds Gemini CLI for consumer use; Google documents the [migration](https://github.com/google-gemini/gemini-cli/discussions/27274) separately.
 - **[OpenCode](https://github.com/anomalyco/opencode)** — An open-source coding agent with terminal and client/server surfaces, multi-provider model support, tool execution, sessions, and extensibility.
@@ -176,6 +186,8 @@ The four featured systems above are joined by eight coding harnesses in the core
 - **[OpenHands](https://github.com/OpenHands/OpenHands)** — A platform for software-development agents with isolated runtimes, event streams, tool execution, browsing, delegation, and evaluation integrations.
 - **[Deep Agents](https://github.com/langchain-ai/deepagents)** — A batteries-included agent harness that combines planning, filesystems, subagents, context management, memory, and LangGraph execution.
 - **[Prime Agent](https://github.com/PrimeIntellect-ai/prime-agent)** — A coding-agent system centered on long-running repository tasks, execution environments, trajectory capture, and training/evaluation workflows.
+- **[GitHub Copilot in VS Code](https://code.visualstudio.com/blogs/2026/05/15/agent-harnesses-github-copilot-vscode/)** — An editor-native production harness with model-specific context and tool adaptation, explicit loop control, portable sessions, permission hooks, and a documented evaluation pipeline.
+- **[MiMo-Code](https://github.com/XiaomiMiMo/MiMo-Code)** — Xiaomi's terminal coding harness with persistent project memory, checkpoints, context reconstruction, subagents, skills, MCP, permission rules, and judge-driven research and experiment loops.
 
 #### General agent runtimes
 
@@ -183,39 +195,43 @@ The four featured systems above are joined by eight coding harnesses in the core
 - **[Google ADK](https://github.com/google/adk-python)** — An agent development kit with workflow agents, tools, sessions, callbacks, evaluation, and deployment integrations.
 - **[Microsoft Agent Framework](https://github.com/microsoft/agent-framework)** — Microsoft's runtime for agents, workflows, middleware, memory, tools, observability, and evaluation; its [Build 2026 update](https://devblogs.microsoft.com/agent-framework/microsoft-agent-framework-at-build-2026-announce/) documents the platform's current direction.
 - **[LangGraph](https://github.com/langchain-ai/langgraph)** — A stateful graph runtime for durable execution, checkpoints, interrupts, streaming, and human-in-the-loop agent workflows.
+- **[Mastra](https://github.com/mastra-ai/mastra)** — A TypeScript-native application runtime with autonomous agents, graph workflows, tools and MCP, stored suspend/resume state, memory, observability, and built-in evaluation.
 
-#### OS, personal, and composable harnesses
+#### Persistent, meta, OS, and operational harnesses
 
 - **[DeerFlow](https://github.com/bytedance/deer-flow)** — A modular agent harness for research and coding workflows with subagents, skills, memory, sandbox execution, and long-running tasks.
-- **[AIOS](https://github.com/agiresearch/AIOS)** — An LLM agent operating-system architecture that schedules agents and mediates models, tools, memory, storage, and access control.
 - **[AOHP](https://github.com/aohp-os/aohp)** — An OS-level harness for personalized interaction, local resources, efficiency, and security boundaries.
 - **[Omnigent](https://github.com/omnigent-ai/omnigent)** — A general agent platform joining tool use, state, memory, policy, and multi-surface execution.
+- **[TrueForge](https://github.com/truefoundry/trueforge)** — A self-hosted, vendor-neutral runtime and control plane spanning model calls, MCP and skills, sandboxing, approvals, deferred tools, context compaction, persistent sessions, identity, inspection, and reproducible experiments. [Engineering note](https://www.truefoundry.com/blog/engineering/trueforge-open-source-agent-harness/)
+- **[LongHorizon-Harness](https://github.com/AMAP-ML/LongHorizon-Harness)** — A meta-harness that wraps existing coding agents in plan–act–verify, durable state, role isolation, audit, checkpoint, and recovery loops. [Paper](https://arxiv.org/abs/2608.01964)
+- **[Hermes Agent](https://github.com/nousresearch/hermes-agent)** — A persistent personal-agent runtime with memory, agent-created skills, multi-channel gateways, several sandbox backends, subagents, approvals, checkpoints, context compression, trajectories, and batch evaluation. [Docs](https://hermes-agent.nousresearch.com/docs/)
+- **[SandBase](https://github.com/sandbaseai/sandbase-harness)** — A local-first operations and security control plane with resumable sessions, audit and replay, MCP toolsets, credential and approval policy, several sandbox backends, typed SDKs, and conformance tests.
+
+#### Workplace and personal-agent harnesses
+
+- **[WorkBuddy](https://www.workbuddy.ai/)** — Tencent Cloud's office harness plans and executes cross-tool work across messaging, documents, mail, meetings, and knowledge bases. Its [open platform](https://open.workbuddy.cn/en/docs/buddy-app) exposes skills, MCP/OAuth connectors, experts, multi-agent collaboration, context compression, memory, tool orchestration, and permission control.
+- **[Muse](https://muse.ai/)** — Meta's personal-agent harness runs each agent in a persistent isolated VM with a browser, filesystem, terminal, memory, connected apps, self-built tools, scheduled and event-driven work, action approvals, credential isolation, and a complete activity trail. [Design account](https://introducing.muse.ai/) · [Launch and security architecture](https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent)
 
 #### Extended catalog
 
 - **[Aider](https://github.com/Aider-AI/aider)** — Terminal pair programming with repository maps, edit formats, git integration, and broad model support.
+- **[mini-SWE-agent](https://github.com/SWE-agent/mini-swe-agent)** — A deliberately minimal software-engineering agent with a short linear loop, multiple sandbox backends, trajectory inspection, and broad benchmark use; the SWE-agent maintainers recommend it for new work.
 - **[SWE-agent](https://github.com/SWE-agent/SWE-agent)** — An agent-computer interface designed for solving software-engineering issues in repository environments.
-- **[Mastra](https://github.com/mastra-ai/mastra)** — A TypeScript framework for agents, workflows, tools, memory, observability, and evaluation.
 - **[AutoGen](https://github.com/microsoft/autogen)** — An event-driven framework for conversational and multi-agent applications.
 - **[MetaGPT](https://github.com/geekan/MetaGPT)** — A multi-agent software workflow organized around roles, standard operating procedures, and shared artifacts.
 - **[CAMEL](https://github.com/camel-ai/camel)** — A multi-agent framework for role-playing, tool use, memory, and agent societies.
 - **[ChatDev](https://github.com/OpenBMB/ChatDev)** — A virtual software company that coordinates specialized agents through a staged development process.
+- **[AIOS](https://github.com/agiresearch/AIOS)** — A research operating-system architecture that separates an agent kernel from the Cerebrum SDK and mediates models, tools, memory, storage, and access control; it remains historically important, while its analysis unit and incomplete public lifecycle/evaluation evidence differ from the full runtime matrix.
 - **[Raven](https://github.com/EverMind-AI/Raven)** — A composable “harness of harnesses” for assembling and coordinating agent capabilities.
-- **[Hermes Agent](https://github.com/nousresearch/hermes-agent)** — A self-improving agent framework with persistent skills, tools, and learning across tasks. [Docs](https://hermes-agent.nousresearch.com/docs/)
-- **[SandBase](https://github.com/sandbaseai/sandbase-harness)** — A local-first, self-hosted agent runtime and MCP bridge with explicit tool and execution boundaries.
-- **[MiMo-Code](https://github.com/XiaomiMiMo/MiMo-Code)** — Xiaomi's open-source coding-agent project for repository-level development workflows.
 - **[Open SWE](https://github.com/langchain-ai/open-swe)** — An open-source asynchronous coding-agent reference built for delegated repository work.
 - **[QM](https://github.com/yc-software/qm)** — An open coding-agent project exploring autonomous repository work and tool-driven development.
 - **[Eve](https://github.com/vercel/eve)** — Vercel's open agent project for iterative software work and execution-driven feedback.
 - **[Shepherd](https://github.com/shepherd-agents/shepherd)** — An agent orchestration project for coordinating development tasks and specialized workers.
 - **[YYLO](https://github.com/yylo-dev/yylo)** — A CLI for orchestrating coding agents with plugins, evidence capture, and longitudinal workflows.
-- **[GitHub Copilot in VS Code](https://code.visualstudio.com/blogs/2026/05/15/agent-harnesses-github-copilot-vscode/)** — A production IDE harness whose published architecture covers context assembly, tool loops, stopping behavior, and model-specific adaptations.
-- **[TrueForge](https://github.com/truefoundry/trueforge)** — An open-source coding harness with repository tools, execution, reusable skills, verification, and observable trajectories. [Engineering note](https://www.truefoundry.com/blog/engineering/trueforge-open-source-agent-harness/)
 - **[Gemini CLI](https://github.com/google-gemini/gemini-cli)** — Google's earlier open-source terminal agent. Its consumer service migrated to Antigravity CLI in June 2026; the repository remains useful as an architectural lineage. [Migration notice](https://github.com/google-gemini/gemini-cli/discussions/27274)
 
 #### Long-horizon and domain-specific harnesses
 
-- **[LongHorizon-Harness](https://github.com/AMAP-ML/LongHorizon-Harness)** — A long-running agent harness that treats task continuation, state, recovery, and experience reuse as first-class runtime problems. [Paper](https://arxiv.org/abs/2608.01964)
 - **[CheetahClaws](https://github.com/SAIL-Research-Lab/cheetahclaws)** — A research harness for system-level scaling around fixed models, including orchestration, tools, context, and parallel work. [Paper](https://arxiv.org/abs/2605.26112)
 - **[DataFlow-Harness](https://github.com/OpenDCAI/DataFlow-WebUI)** — A data-centric harness for composing, running, and evaluating agentic data workflows. [Paper](https://arxiv.org/abs/2607.16617)
 
@@ -555,6 +571,12 @@ The hardest harness problems appear where execution, context, state, permissions
 - <u>TrueForge Engineering</u>: **"TrueForge: An Open-Source Agent Harness"**. *TrueFoundry.* August 2026. [[Article](https://www.truefoundry.com/blog/engineering/trueforge-open-source-agent-harness/)]
 - <u>Agent Host Architecture</u>: **"Agent Host Architecture"**. *Visual Studio Code Team.* August 2026. [[Article](https://code.visualstudio.com/blogs/2026/08/26/agent-host-architecture)]
 - <u>Agent Factory</u>: **"Agent Factory Recap: Agent Harnesses, Shifting Left, and Autonomous Coding"**. *Google Cloud.* September 2026. [[Article](https://cloud.google.com/blog/topics/developers-practitioners/agent-factory-recap-agent-harnesses-shifting-left-and-autonomous-coding/)]
+- <u>Hermes Agent Runtime</u>: **"Hermes Agent Documentation"**. *Nous Research.* 2026. [[Documentation](https://hermes-agent.nousresearch.com/docs/)]
+- <u>MiMo-Code Runtime</u>: **"MiMo-Code: Open-Source Coding Agent Harness"**. *XiaomiMiMo.* 2026. [[Repository](https://github.com/XiaomiMiMo/MiMo-Code)]
+- <u>Mastra Runtime</u>: **"Mastra: TypeScript Agent Framework and Runtime"**. *Mastra.* 2026. [[Repository](https://github.com/mastra-ai/mastra)]
+- <u>SandBase Runtime</u>: **"SandBase Harness"**. *SandBase.* 2026. [[Repository](https://github.com/sandbaseai/sandbase-harness)]
+- <u>WorkBuddy Open Platform</u>: **"Buddy App: An AI Harness for a Vertical Industry"**. *Tencent Cloud.* 2026. [[Documentation](https://open.workbuddy.cn/en/docs/buddy-app)]
+- <u>Muse Design and Runtime</u>: **"How We Designed Muse"**. *Meta.* September 2026. [[Article](https://introducing.muse.ai/)] [[Architecture](https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent)]
 
 ---
 
@@ -586,7 +608,7 @@ This is an **opinionated research index**. An entry belongs when it contributes 
 - **Keep experimental units separate:** model, harness, environment, task, budget, and evaluator should be named independently.
 - **Keep layers separate:** full harnesses, capability modules, security layers, task environments, and evaluation runners are cataloged in their own categories.
 - **Track uncertainty:** `Unverified` records insufficient public evidence; an `Absent` rating requires explicit first-party evidence.
-- **Record the cutoff:** ratings reflect public evidence available through **2026-10-12** and may change as systems evolve.
+- **Record the cutoff:** ratings reflect public evidence available through **2026-10-13** and may change as systems evolve.
 
 ---
 
@@ -594,7 +616,7 @@ This is an **opinionated research index**. An entry belongs when it contributes 
 
 | Artifact | Current version | Date / cutoff | Status |
 |---|---|---|---|
-| Resource index | **2026.10** | Evidence reviewed through **2026-10-12** | This README; last updated **2026-10-13** |
+| Resource index | **2026.10** | Evidence reviewed through **2026-10-13** | This README; last updated **2026-10-13** |
 | Repository paper | **v4** | 2026-04-14 | [Public PDF](./Agent_Harness_for_LLM_Agents__A_Survey__v4.pdf) |
 | Archived preprint | **v3** | 2026-04-09 | [DOI record](https://doi.org/10.20944/preprints202604.0428.v3) |
 | Paper v5 | In revision | — | The manuscript, figures, and references are under review |
@@ -619,7 +641,7 @@ Corrections and suggestions: gloriamenng@gmail.com · wangyanan@mail.dlut.edu.cn
 
 | Track | Version | Date | Changes |
 |---|---|---|---|
-| Resource index | **2026.10** | 2026-10-13 | Restored a survey-first homepage and prominent citation; reorganized the evidence into framework, history, systems, evaluation, and research; added April–October systems and studies; reduced the header to three badges and consolidated figures |
+| Resource index | **2026.10** | 2026-10-13 | Restored the paper title, citation, and survey narrative; reduced the header to stars, total references, and license; expanded the open evidence matrix from 20 to 28 systems, including workplace and personal-agent routes; added April–October systems, benchmarks, architecture reports, and a categorized full directory |
 | Paper | **v4** | 2026-04-14 | Current repository PDF; predates the 2026.10 resource index |
 | Archived preprint | **v3** | 2026-04-09 | DOI-linked public preprint |
 

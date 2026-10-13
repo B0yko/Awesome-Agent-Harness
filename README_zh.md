@@ -7,7 +7,7 @@
 ### 论文官方仓库与持续更新的证据索引
 
 [![GitHub Stars](https://img.shields.io/github/stars/Gloriaameng/Awesome-Agent-Harness?style=social)](https://github.com/Gloriaameng/Awesome-Agent-Harness)
-[![References](https://img.shields.io/badge/References-156-2b8a3e)](#5-研究资料库)
+[![References](https://img.shields.io/badge/References-162-2b8a3e)](#5-研究资料库)
 [![License](https://img.shields.io/badge/License-CC--BY--4.0-blue.svg)](license)
 
 </div>
@@ -16,7 +16,7 @@
 
 这是综述论文 **《Agent Harness for Large Language Model Agents: A Survey》** 的官方仓库。论文是整个项目的中心：它界定研究对象，提出 ETCSLV 分析框架，梳理历史来源，比较代表系统，并组织评测版图与研究议程。下面的资源索引用于在论文版本之间持续维护这套证据基础。
 
-📄 **[Paper v4](./Agent_Harness_for_LLM_Agents__A_Survey__v4.pdf)** · 🌐 **[已归档预印本 v3](https://www.preprints.org/manuscript/202604.0428/v3)** · 🗂️ **Resource Index 2026.10**（证据截至 2026-10-12）· **Paper v5 正在修订**
+📄 **[Paper v4](./Agent_Harness_for_LLM_Agents__A_Survey__v4.pdf)** · 🌐 **[已归档预印本 v3](https://www.preprints.org/manuscript/202604.0428/v3)** · 🗂️ **Resource Index 2026.10**（证据截至 2026-10-13）· **Paper v5 正在修订**
 
 [综述贡献](#这篇综述做了什么) · [概念框架](#1-概念框架) · [系统版图](#3-系统版图) · [评测版图](#4-评测版图) · [研究资料库](#5-研究资料库)
 
@@ -52,7 +52,7 @@
 1. **提出联合分析单元。** 在 **model–harness–environment** 层面研究 Agent 行为，让结果能够回到产生它的完整 configuration。
 2. **建立统一架构视角。** **ETCSLV** 将反复出现的 harness 功能整理为 execution、tool、context、state、lifecycle 与 evaluation。
 3. **梳理历史来源。** 把软件 test harness、强化学习 environment、早期 LLM Agent framework 与今天的持久 Agent runtime 连到同一条演进线上。
-4. **建立可比较的系统版图。** 用同一套证据编码矩阵分析 20 个核心系统，并把 Claude Code、Codex、DeepSeek Harness 与 OpenClaw 作为等深度重点案例。
+4. **建立可比较的系统版图。** 用同一套证据编码矩阵分析 28 个系统，覆盖 coding、application runtime、办公、personal agent、OS 与 meta-harness 路线；比较集会随公开证据继续扩展，Claude Code、Codex、DeepSeek Harness 与 OpenClaw 作为等深度重点案例展开。
 5. **重组评测版图。** 按真正改变的变量区分 harness-effect benchmark、lifecycle 与 security test、long-horizon recovery、protocol benchmark、evaluation infrastructure 和 task environment。
 6. **提出面向演化 runtime 的研究议程。** 将 context、memory、tool、security、observability 与 cost 连接到 harness evolution 和有边界的 runtime self-improvement。
 
@@ -63,15 +63,17 @@
 - **长时 Agent 让 trace 与 lifecycle event 成为研究对象。** 只看最终任务成功无法解释 recovery、policy decision、accumulated state 与 regression。
 - **Runtime self-improvement 需要外部评测闭环。** 持久修改应当被隔离，在 held-out task 上评测，经过安全与成本门禁，并支持版本管理与回滚。
 
-## 如何阅读这个仓库
+## 综述与仓库地图
+
+README 沿用论文的论证顺序，而不是把项目堆成一份与综述脱节的软件清单。按编号阅读可以看到完整的概念论述；各目录则是对应论文部分持续维护的证据层。
 
 | 综述问题 | 仓库部分 | 你会看到什么 |
 |---|---|---|
 | Harness layer 到底是什么？ | [1. 概念框架](#1-概念框架) | Model–harness–environment 边界与 ETCSLV |
 | 这种架构从哪里演变而来？ | [2. 历史演进](#2-历史演进) | Test harness、RL environment、LLM Agent 与 runtime 的历史来源 |
-| 哪些系统实现了它？ | [3. 系统版图](#3-系统版图) | 四个重点案例、20 系统矩阵、核心与扩展目录 |
+| 哪些系统实现了它？ | [3. 系统版图](#3-系统版图) | 四个重点案例、开放的 28 系统证据矩阵与分类目录 |
 | 应该如何评测？ | [4. 评测版图](#4-评测版图) | 30 个直接 harness benchmark、评测基础设施与任务环境 |
-| 每类工程问题有哪些证据？ | [5. 研究资料库](#5-研究资料库) | 156 篇安全、上下文、工具、记忆、规划、协作与成本资料 |
+| 每类工程问题有哪些证据？ | [5. 研究资料库](#5-研究资料库) | 按工程问题组织的 162 篇论文、规范、架构说明与报告 |
 | 如何收录，和论文版本是什么关系？ | [关于这篇综述](#关于这篇综述) | 证据规则、版本、引用与贡献指南 |
 
 ---
@@ -114,13 +116,13 @@
 | 2024 | Model Context Protocol | 标准化不断扩大的 tool-to-harness 边界 |
 | 2025 | HAL、AIOS、LangGraph、A2A | 推进 evaluation infrastructure、Agent OS、durable graph 与 Agent interoperability |
 | 2025 | MemoryOS、AgentBound† | 发展 memory abstraction 与 runtime enforcement |
-| 2026 | Antigravity、Harness-Bench、WildClawBench、HarnessX、LongHorizon-Harness、HarnessAudit-Bench、SCLATE | 把 harness 选择、演化、长时运行、生命周期风险与可审计性变成直接研究对象 |
+| 2026 | Antigravity、WorkBuddy、Muse、Harness-Bench、HarnessX、LongHorizon-Harness、HarnessAudit-Bench、SCLATE | Harness 扩展到 coding、办公与 personal agent，同时让 harness 选择、演化、长时运行、生命周期风险与可审计性成为直接研究对象 |
 
 ---
 
 ## 3. 系统版图
 
-系统版图从深度走向广度：四个重点案例详细暴露 runtime，核心矩阵使用统一口径比较，系统目录继续扩展到相邻架构与能力模块。
+系统版图从深度走向广度：四个重点案例详细暴露 runtime，证据矩阵使用统一口径比较，目录继续保留更广的系统、substrate、能力模块与评测基础设施。比较集由证据门槛决定并持续开放；28 是当前应用收录规则的结果，不是预设目标，也不代表已经穷尽所有系统。产品形态不是排除条件：办公与 personal agent 只要有足够公开架构证据，同样属于 harness 研究对象。
 
 ### 四个重点系统
 
@@ -131,7 +133,7 @@
 - **[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)** — plugin-native runtime；model adapter、loop、工具、context projection、storage、telemetry 与界面通过 profile、bundle 和有序 patch 组合。这些边界让团队能够分别替换和审计 loop、context policy、tool behavior 与 observability。[架构](https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/architecture.md)、[工具子系统](https://github.com/deepseek-ai/deepseek-harness/blob/master/packages/core/tools/README.md)和[压缩机制](https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/subsystems/compaction.md)也为有边界、可评测、可回滚的 harness-level improvement 提供了具体底座。
 - **[OpenClaw](https://github.com/openclaw/openclaw)** — 围绕 channel、session、tool、skill、memory、scheduled work、gateway routing 与 sandbox execution 构建的常驻个人 Agent harness。它把部署连续性放在中心：身份、凭据、后台任务、workspace state 与运行策略不会在一次对话结束后消失。这种运行方式使它成为研究持久个人 Agent，而非一次性 assistant 的关键案例。
 
-### 核心比较矩阵
+### 证据编码比较矩阵
 
 评分描述证据截止日期时能够由公开材料证明的组件覆盖。质量、生产成熟度与采用情况分别表达；stars 只作为采用信号。
 
@@ -151,22 +153,30 @@
 | Coding harness | **OpenHands** | ● | ● | ● | ● | ● | ◐ |
 | Coding harness | **Deep Agents** | ● | ● | ● | ● | ● | ● |
 | Coding harness | **Prime Agent** | ● | ● | ● | ● | ◐ | ◐ |
+| Coding harness | **GitHub Copilot in VS Code** | ● | ● | ● | ● | ● | ● |
+| Coding harness | **MiMo-Code** | ● | ● | ● | ● | ● | ● |
 | 通用 runtime | **OpenAI Agents SDK** | ● | ● | ● | ● | ● | ● |
 | 通用 runtime | **Google ADK** | ● | ● | ● | ● | ● | ● |
 | 通用 runtime | **Microsoft Agent Framework** | ● | ● | ● | ● | ● | ● |
 | 通用 runtime | **LangGraph** | ● | ◐ | ◐ | ● | ◐ | ◐ |
-| 其他代表路线 | **DeerFlow** | ● | ● | ● | ● | ● | ◐ |
-| 其他代表路线 | **AIOS** | ● | ● | ● | ● | ● | ◐ |
-| 其他代表路线 | **AOHP** | ● | ● | ● | ● | ● | ◐ |
-| 其他代表路线 | **Omnigent** | ● | ● | ◐ | ● | ● | ◐ |
+| 通用 runtime | **Mastra** | ● | ● | ● | ● | ● | ● |
+| 持久、meta 与 operational harness | **DeerFlow** | ● | ● | ● | ● | ● | ◐ |
+| 持久、meta 与 operational harness | **AOHP** | ● | ● | ● | ● | ● | ◐ |
+| 持久、meta 与 operational harness | **Omnigent** | ● | ● | ◐ | ● | ● | ◐ |
+| 持久、meta 与 operational harness | **TrueForge** | ● | ● | ● | ● | ● | ● |
+| 持久、meta 与 operational harness | **LongHorizon-Harness** | ● | ◐ | ● | ● | ● | ● |
+| 持久、meta 与 operational harness | **Hermes Agent** | ● | ● | ● | ● | ● | ● |
+| 持久、meta 与 operational harness | **SandBase** | ● | ● | ◐ | ● | ● | ● |
+| 办公与 personal-agent harness | **WorkBuddy** | ● | ● | ● | ● | ● | ◐ |
+| 办公与 personal-agent harness | **Muse** | ● | ● | ● | ● | ● | ● |
 
 ### 系统目录
 
-**20 个核心系统**用于同口径架构比较；扩展目录保留其他重要系统和相邻路线，成熟度判断单独处理。
+矩阵收录所有目前能够由一方公开材料对六项组件做出有用判断的系统。它不是“Top 28”，也不是成熟度排名。分析单位不同、证据尚不完整或只聚焦单项能力的项目仍保留在下面的分类目录中。
 
-#### 核心 Coding Harness
+#### 进入比较矩阵的 Coding Harness
 
-除上面的四个重点系统外，核心比较集还包含以下八个 coding harness。
+除上面的四个重点系统外，比较矩阵还包含以下十个 coding harness。
 
 - **[Antigravity CLI](https://antigravity.google/blog/introducing-google-antigravity-2?hl=en)** — Google 当前的 coding harness，提供动态 subagent、异步任务、skill、hook、项目权限、定时任务，并把这些控制带入 CLI。它已经接替 Gemini CLI 的消费端用途；Google 另行说明了[迁移安排](https://github.com/google-gemini/gemini-cli/discussions/27274)。
 - **[OpenCode](https://github.com/anomalyco/opencode)** — 具有 terminal 与 client/server 界面、多模型提供方、工具执行、session 与扩展机制的开源 coding agent。
@@ -176,6 +186,8 @@
 - **[OpenHands](https://github.com/OpenHands/OpenHands)** — 面向软件开发 Agent 的平台，组合隔离 runtime、event stream、工具执行、浏览、delegation 与 evaluation integration。
 - **[Deep Agents](https://github.com/langchain-ai/deepagents)** — 集成 planning、filesystem、subagent、context management、memory 与 LangGraph execution 的 batteries-included agent harness。
 - **[Prime Agent](https://github.com/PrimeIntellect-ai/prime-agent)** — 聚焦长时仓库任务、execution environment、trajectory capture 与训练/评测 workflow 的 coding-agent 系统。
+- **[GitHub Copilot in VS Code](https://code.visualstudio.com/blogs/2026/05/15/agent-harnesses-github-copilot-vscode/)** — editor-native production harness，公开架构包括针对不同模型的 context/tool adaptation、显式 loop control、可迁移 session、权限 hook 与自动评测流程。
+- **[MiMo-Code](https://github.com/XiaomiMiMo/MiMo-Code)** — 小米开放的 terminal coding harness，包含持久项目记忆、checkpoint、context reconstruction、subagent、skill、MCP、permission rule，以及由独立 judge 驱动的研究与实验 loop。
 
 #### 通用 Agent Runtime
 
@@ -183,39 +195,43 @@
 - **[Google ADK](https://github.com/google/adk-python)** — 集成 workflow agent、工具、session、callback、evaluation 与 deployment integration 的 Agent 开发工具包。
 - **[Microsoft Agent Framework](https://github.com/microsoft/agent-framework)** — Microsoft 面向 agent、workflow、middleware、memory、tool、observability 与 evaluation 的 runtime；其 [Build 2026 更新](https://devblogs.microsoft.com/agent-framework/microsoft-agent-framework-at-build-2026-announce/)说明了当前平台方向。
 - **[LangGraph](https://github.com/langchain-ai/langgraph)** — 支持 durable execution、checkpoint、interrupt、streaming 与 human-in-the-loop workflow 的有状态图 runtime。
+- **[Mastra](https://github.com/mastra-ai/mastra)** — TypeScript-native application runtime，组合 autonomous agent、graph workflow、tool 与 MCP、持久 suspend/resume state、memory、observability 与内置 evaluation。
 
-#### OS、个人 Agent 与可组合 Harness
+#### 持久、Meta、OS 与 Operational Harness
 
 - **[DeerFlow](https://github.com/bytedance/deer-flow)** — 面向研究与 coding workflow 的模块化 harness，包含 subagent、skill、memory、sandbox execution 与 long-running task。
-- **[AIOS](https://github.com/agiresearch/AIOS)** — 调度 Agent，并在 model、tool、memory、storage 与 access control 之间提供中介层的 LLM Agent OS 架构。
 - **[AOHP](https://github.com/aohp-os/aohp)** — 面向个性化交互、本地资源、效率与安全边界的 OS-level harness。
 - **[Omnigent](https://github.com/omnigent-ai/omnigent)** — 连接工具使用、state、memory、policy 与多界面执行的通用 Agent 平台。
+- **[TrueForge](https://github.com/truefoundry/trueforge)** — self-hosted、vendor-neutral runtime 与 control plane，覆盖 model call、MCP/skill、sandbox、approval、deferred tool、context compaction、持久 session、身份管理、运行检查与可复现实验。[工程说明](https://www.truefoundry.com/blog/engineering/trueforge-open-source-agent-harness/)
+- **[LongHorizon-Harness](https://github.com/AMAP-ML/LongHorizon-Harness)** — 在现有 coding agent 外包裹 plan–act–verify、durable state、role isolation、audit、checkpoint 与 recovery 的 meta-harness。[论文](https://arxiv.org/abs/2608.01964)
+- **[Hermes Agent](https://github.com/nousresearch/hermes-agent)** — 持久个人 Agent runtime，提供 memory、Agent 自建 skill、多 channel gateway、多种 sandbox backend、subagent、approval、checkpoint、context compression、trajectory 与 batch evaluation。[文档](https://hermes-agent.nousresearch.com/docs/)
+- **[SandBase](https://github.com/sandbaseai/sandbase-harness)** — local-first operations/security control plane，提供 resumable session、audit/replay、MCP toolset、credential/approval policy、多种 sandbox backend、typed SDK 与 conformance test。
+
+#### 办公与 Personal-Agent Harness
+
+- **[WorkBuddy](https://www.workbuddy.ai/)** — 腾讯云面向办公工作的 harness，可跨 IM、文档、邮件、会议与知识库规划并执行任务；其[开放平台](https://open.workbuddy.cn/en/docs/buddy-app)进一步公开 skill、MCP/OAuth connector、expert、multi-agent collaboration、context compression、memory、tool orchestration 与 permission control。
+- **[Muse](https://muse.ai/)** — Meta 的 personal-agent harness；每位用户的 Agent 运行在持久隔离 VM 中，具有 browser、filesystem、terminal、memory、connected app、自建工具、定时和事件驱动工作、action approval、credential isolation 与完整 activity trail。[设计说明](https://introducing.muse.ai/) · [发布与安全架构](https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent)
 
 #### 扩展目录
 
 - **[Aider](https://github.com/Aider-AI/aider)** — 具有 repo map、edit format、git 集成与多模型支持的 terminal pair programming 工具。
+- **[mini-SWE-agent](https://github.com/SWE-agent/mini-swe-agent)** — 有意保持极简的软件工程 Agent，采用短而线性的 loop，支持多种 sandbox、trajectory inspection 与广泛 benchmark；SWE-agent 维护者建议新工作优先使用它。
 - **[SWE-agent](https://github.com/SWE-agent/SWE-agent)** — 为在仓库环境中解决软件工程 issue 而设计的 agent-computer interface。
-- **[Mastra](https://github.com/mastra-ai/mastra)** — 面向 agent、workflow、tool、memory、observability 与 evaluation 的 TypeScript framework。
 - **[AutoGen](https://github.com/microsoft/autogen)** — 面向对话式与 multi-agent application 的 event-driven framework。
 - **[MetaGPT](https://github.com/geekan/MetaGPT)** — 围绕角色、标准作业流程与共享产物组织的软件工程 multi-agent workflow。
 - **[CAMEL](https://github.com/camel-ai/camel)** — 支持 role-playing、tool use、memory 与 agent society 的 multi-agent framework。
 - **[ChatDev](https://github.com/OpenBMB/ChatDev)** — 通过分阶段开发过程协调专业 Agent 的虚拟软件公司。
+- **[AIOS](https://github.com/agiresearch/AIOS)** — 将 Agent kernel 与独立 Cerebrum SDK 分开的研究型操作系统架构，在 model、tool、memory、storage 与 access control 之间提供中介；它具有重要历史价值，但分析单位以及公开 lifecycle/evaluation 证据与完整 runtime 矩阵并不一致。
 - **[Raven](https://github.com/EverMind-AI/Raven)** — 用于组装和协调 Agent 能力的可组合 “harness of harnesses”。
-- **[Hermes Agent](https://github.com/nousresearch/hermes-agent)** — 具有持久 skill、tool 与跨任务学习能力的 self-improving agent framework。[文档](https://hermes-agent.nousresearch.com/docs/)
-- **[SandBase](https://github.com/sandbaseai/sandbase-harness)** — local-first、self-hosted agent runtime 与 MCP bridge，强调显式工具和执行边界。
-- **[MiMo-Code](https://github.com/XiaomiMiMo/MiMo-Code)** — 小米面向仓库级开发 workflow 的开源 coding-agent 项目。
 - **[Open SWE](https://github.com/langchain-ai/open-swe)** — 面向委托式仓库工作的开源异步 coding-agent reference。
 - **[QM](https://github.com/yc-software/qm)** — 探索自主仓库工作与 tool-driven development 的开源 coding-agent 项目。
 - **[Eve](https://github.com/vercel/eve)** — Vercel 面向迭代软件工作与 execution-driven feedback 的开源 Agent 项目。
 - **[Shepherd](https://github.com/shepherd-agents/shepherd)** — 用于协调开发任务与专业 worker 的 Agent orchestration 项目。
 - **[YYLO](https://github.com/yylo-dev/yylo)** — 通过 plugin、证据记录与纵向 workflow 编排 coding agent 的 CLI。
-- **[GitHub Copilot in VS Code](https://code.visualstudio.com/blogs/2026/05/15/agent-harnesses-github-copilot-vscode/)** — 公开架构覆盖 context assembly、tool loop、停止逻辑与模型适配的生产级 IDE harness。
-- **[TrueForge](https://github.com/truefoundry/trueforge)** — 集成仓库工具、执行、可复用 skill、验证与可观测 trajectory 的开源 coding harness。[工程说明](https://www.truefoundry.com/blog/engineering/trueforge-open-source-agent-harness/)
 - **[Gemini CLI](https://github.com/google-gemini/gemini-cli)** — Google 较早的开源 terminal agent。其消费端服务已于 2026 年 6 月迁移到 Antigravity CLI，原仓库仍可作为架构历史来源。[迁移公告](https://github.com/google-gemini/gemini-cli/discussions/27274)
 
 #### 长时与领域型 Harness
 
-- **[LongHorizon-Harness](https://github.com/AMAP-ML/LongHorizon-Harness)** — 把任务延续、状态、恢复与经验复用作为一等 runtime 问题的长时 Agent harness。[论文](https://arxiv.org/abs/2608.01964)
 - **[CheetahClaws](https://github.com/SAIL-Research-Lab/cheetahclaws)** — 面向固定模型做系统级 scaling 的研究 harness，涵盖 orchestration、tool、context 与并行工作。[论文](https://arxiv.org/abs/2605.26112)
 - **[DataFlow-Harness](https://github.com/OpenDCAI/DataFlow-WebUI)** — 用于组合、运行和评测 Agent 数据 workflow 的 data-centric harness。[论文](https://arxiv.org/abs/2607.16617)
 
@@ -555,6 +571,12 @@ Agent Harness 的难点不只存在于单个组件，而在执行、上下文、
 - <u>TrueForge Engineering</u>: **"TrueForge: An Open-Source Agent Harness"**. *TrueFoundry.* 2026 年 8 月。[[文章](https://www.truefoundry.com/blog/engineering/trueforge-open-source-agent-harness/)]
 - <u>Agent Host Architecture</u>: **"Agent Host Architecture"**. *Visual Studio Code Team.* 2026 年 8 月。[[文章](https://code.visualstudio.com/blogs/2026/08/26/agent-host-architecture)]
 - <u>Agent Factory</u>: **"Agent Factory Recap: Agent Harnesses, Shifting Left, and Autonomous Coding"**. *Google Cloud.* 2026 年 9 月。[[文章](https://cloud.google.com/blog/topics/developers-practitioners/agent-factory-recap-agent-harnesses-shifting-left-and-autonomous-coding/)]
+- <u>Hermes Agent Runtime</u>: **"Hermes Agent Documentation"**. *Nous Research.* 2026。[[文档](https://hermes-agent.nousresearch.com/docs/)]
+- <u>MiMo-Code Runtime</u>: **"MiMo-Code: Open-Source Coding Agent Harness"**. *XiaomiMiMo.* 2026。[[仓库](https://github.com/XiaomiMiMo/MiMo-Code)]
+- <u>Mastra Runtime</u>: **"Mastra: TypeScript Agent Framework and Runtime"**. *Mastra.* 2026。[[仓库](https://github.com/mastra-ai/mastra)]
+- <u>SandBase Runtime</u>: **"SandBase Harness"**. *SandBase.* 2026。[[仓库](https://github.com/sandbaseai/sandbase-harness)]
+- <u>WorkBuddy Open Platform</u>: **"Buddy App: An AI Harness for a Vertical Industry"**. *Tencent Cloud.* 2026。[[文档](https://open.workbuddy.cn/en/docs/buddy-app)]
+- <u>Muse Design and Runtime</u>: **"How We Designed Muse"**. *Meta.* 2026 年 9 月。[[文章](https://introducing.muse.ai/)] [[架构](https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent)]
 
 ---
 
@@ -586,7 +608,7 @@ Agent Harness 的难点不只存在于单个组件，而在执行、上下文、
 - **拆开实验单元：**分别说明 model、harness、environment、task、budget 与 evaluator。
 - **拆开不同层级：**full harness、能力模块、安全层、任务环境和 evaluation runner 分区收录。
 - **保留不确定性：**`Unverified` 记录公开材料不足；`Absent` 必须有一方材料明确证明。
-- **记录截止时间：**评分反映截至 **2026-10-12** 的公开证据；系统更新后可能变化。
+- **记录截止时间：**评分反映截至 **2026-10-13** 的公开证据；系统更新后可能变化。
 
 ---
 
@@ -594,7 +616,7 @@ Agent Harness 的难点不只存在于单个组件，而在执行、上下文、
 
 | 产物 | 当前版本 | 日期 / 截止时间 | 状态 |
 |---|---|---|---|
-| 资源索引 | **2026.10** | 证据核验截至 **2026-10-12** | 当前 README；最后更新于 **2026-10-13** |
+| 资源索引 | **2026.10** | 证据核验截至 **2026-10-13** | 当前 README；最后更新于 **2026-10-13** |
 | 仓库论文 | **v4** | 2026-04-14 | [公开 PDF](./Agent_Harness_for_LLM_Agents__A_Survey__v4.pdf) |
 | 已归档预印本 | **v3** | 2026-04-09 | [DOI 记录](https://doi.org/10.20944/preprints202604.0428.v3) |
 | Paper v5 | 修订中 | — | 正文、图片与引用正在审查 |
@@ -619,7 +641,7 @@ Agent Harness 的难点不只存在于单个组件，而在执行、上下文、
 
 | 更新轨道 | 版本 | 日期 | 变更 |
 |---|---|---|---|
-| 资源索引 | **2026.10** | 2026-10-13 | 恢复以综述与引用为首页中心；按框架、历史、系统、评测与研究重组证据；补入 4–10 月新增系统与研究；页首精简为三个徽章并集中图表 |
+| 资源索引 | **2026.10** | 2026-10-13 | 恢复论文标题、引用与综述叙事；页首只保留 stars、总参考资料与 license；开放证据矩阵由 20 项扩为 28 项并补入办公与 personal-agent 路线；补入 4–10 月系统、benchmark、架构报告与完整分类目录 |
 | 论文 | **v4** | 2026-04-14 | 当前仓库 PDF；早于 2026.10 资源索引 |
 | 已归档预印本 | **v3** | 2026-04-09 | DOI 对应的公开预印本 |
 
