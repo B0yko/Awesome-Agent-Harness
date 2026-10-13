@@ -2,122 +2,84 @@
 
 [English](README.md) | [中文](README_zh.md)
 
-# Agent Harness综述
+# 大语言模型智能体的 Agent Harness：综述
 
-[![GitHub Stars](https://img.shields.io/github/stars/Gloriaameng/LLM-Agent-Harness-Survey?style=social)](https://github.com/Gloriaameng/LLM-Agent-Harness-Survey/stargazers)
-[![License](https://img.shields.io/badge/License-CC--BY--4.0-blue.svg)](LICENSE)
-[![Papers](https://img.shields.io/badge/Papers-150%2B-green)]()
-[![Version](https://img.shields.io/badge/Version-v3-orange)]()
-[![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-Dataset-yellow)](https://huggingface.co/datasets/GloriaaaM/LLM-Agent-Harness-Survey)
-[![DOI](https://img.shields.io/badge/DOI-10.20944%2Fpreprints202604.0428.v3-blue)]( https://doi.org/10.20944/preprints202604.0428.v3)
+[![GitHub Stars](https://img.shields.io/github/stars/Gloriaameng/Awesome-Agent-Harness?style=social)](https://github.com/Gloriaameng/Awesome-Agent-Harness)
+[![License](https://img.shields.io/badge/License-CC--BY--4.0-blue.svg)](license)
+[![Resource Index](https://img.shields.io/badge/Resource%20Index-2026.10-0b7285)](#资源与论文状态)
+[![Paper](https://img.shields.io/badge/Paper-v4-orange)](./Agent_Harness_for_LLM_Agents__A_Survey__v4.pdf)
+[![DOI](https://img.shields.io/badge/Archived%20DOI-v3-blue)](https://doi.org/10.20944/preprints202604.0428.v3)
 
 </div>
 
 <p align="center">
-  <img src="assets/architecture_diagram.png" width="720" alt="H=(E,T,C,S,L,V) 六组件架构"/>
+  <img src="assets/architecture_diagram.png" width="720" alt="H=(E,T,C,S,L,V) 六组件分析框架"/>
 </p>
 
-> ⭐ **本仓库持续更新中。如果对你有帮助，欢迎 Star 关注最新进展，也帮助更多人发现它。**
+## 资源与论文状态
 
----
+| 产物 | 当前版本 | 日期 / 资料截止时间 | 说明 |
+|---|---|---|---|
+| 资源索引 | **2026.10** | 资料审查截至 **2026-10-12** | README 系统与 benchmark 图谱 |
+| 仓库论文 | **v4** | 2026-04-14 | [PDF](./Agent_Harness_for_LLM_Agents__A_Survey__v4.pdf) |
+| 已归档预印本 | **v3** | 2026-04-09 | [DOI 记录](https://doi.org/10.20944/preprints202604.0428.v3) |
+| Paper v5 | 修订中 | — | 正在重构，尚未发布 |
 
-> **Agent Harness——而非模型本身——是智能体大规模部署可靠性的首要决定因素。**  
-> 本综述将Agent Harness形式化为一级架构对象 **H = (E, T, C, S, L, V)**，系统调研了涵盖23个系统的110余篇论文、博客和报告，并总结了9项开放性技术挑战。  
-> 📄 **[阅读最新版论文 (PDF)](./Agent_Harness_for_LLM_Agents__A_Survey_v3.pdf)**   
-> 🌐 **[阅读 Preprints 版本](https://www.preprints.org/manuscript/202604.0428/v3)**  
-> ✉️ 勘误与建议：gloriamenng@gmail.com; wangyanan@mail.dlut.edu.cn; chenliyi@xiaohongshu.com 
+> Agent 行为由 **model–harness–environment configuration** 共同产生。本资源将 harness 视为能力、可靠性、成本与安全结果中重要且经常未被单独报告的共同决定因素。
 
-如果本综述对您有所帮助，请引用：
+综述使用 **H = (E, T, C, S, L, V)** 分析公开系统中反复出现的六项治理功能：执行循环、工具注册、上下文管理、状态存储、生命周期钩子与评测接口。组件覆盖用于描述架构，不直接等同于产品成熟度、质量或采用规模。
+
+📄 **[阅读 Paper v4](./Agent_Harness_for_LLM_Agents__A_Survey__v4.pdf)** · 🌐 **[已归档预印本 v3](https://www.preprints.org/manuscript/202604.0428/v3)**
+✉️ 纠错与建议：gloriamenng@gmail.com；wangyanan@mail.dlut.edu.cn；chenliyi@xiaohongshu.com
+
+引用当前已归档版本时，请使用：
 
 ```bibtex
-@article{meng2026agentharness,  
-  title     = {Agent Harness for Large Language Model Agents: A Survey},  
-  author    = {Meng, Qianyu and Wang, Yanan and Chen, Liyi and Wu, Wei and  
-               Li, Yihang and Jiang, Wenyuan and Wang, Qimeng and  
-               Lu, Chengqiang and Gao, Yan and Wu, Yi and Hu, Yao},  
-  year      = {2026},  
-  doi       = {10.20944/preprints202604.0428.v3},  
-  url       = {https://www.preprints.org/manuscript/202604.0428/v3},  
-  publisher = {Preprints},  
-}  
+@article{meng2026agentharness,
+  title     = {Agent Harness for Large Language Model Agents: A Survey},
+  author    = {Meng, Qianyu and Wang, Yanan and Chen, Liyi and Wu, Wei and
+               Li, Yihang and Jiang, Wenyuan and Wang, Qimeng and
+               Lu, Chengqiang and Gao, Yan and Wu, Yi and Hu, Yao},
+  year      = {2026},
+  doi       = {10.20944/preprints202604.0428.v3},
+  url       = {https://www.preprints.org/manuscript/202604.0428/v3},
+  publisher = {Preprints}
+}
 ```
-
----
 
 ## 🆕 新闻与更新
 
-- **[2026-04-03]** 首次发布
-- **[2026-04-07]** 仓库更新
-- **[2026-04-07]** 预印本索引
-- **[2026-04-14]** 引用更新
----
+- **[2026-10-13]** Resource Index 2026.10：重建 20 系统比较集，分离任务环境与 harness benchmark，并补入 harness evolution 与安全评测。
+- **[2026-04-14]** Paper v4 与引用更新。
+- **[2026-04-09]** 已归档预印本 v3 发布。
+- **[2026-04-03]** 首次发布。
 
 ## 目录
 
+- [资源与论文状态](#资源与论文状态)
 - [概述](#概述)
 - [历史时间线](#历史时间线)
-- [Agent_Harness完备性矩阵](#Agent_Harness完备性矩阵)
+- [核心系统矩阵](#核心系统矩阵)
+- [Benchmark 图谱](#benchmark-图谱)
 - [论文列表](#论文列表)
-  - [历史渊源](#历史渊源)
-  - [Agent_Harness分类](#Agent_Harness分类)
-  - [技术挑战](#技术挑战)
-    - [安全与沙箱](#安全与沙箱)
-    - [评估与基准测试](#评估与基准测试)
-    - [协议标准化](#协议标准化)
-    - [运行时上下文管理](#运行时上下文管理)
-    - [工具使用与注册](#工具使用与注册)
-    - [记忆架构](#记忆架构)
-    - [规划与推理](#规划与推理)
-    - [多智能体协同](#多智能体协同)
-    - [计算经济学](#计算经济学)
-  - [新兴主题](#新兴主题)
-  - [未来方向](#未来方向)
+  - [系统目录](#系统目录)
 - [引用](#引用)
 - [更新日志](#更新日志)
 
----
-
 ## 概述
 
-大语言模型（LLM）智能体正日益部署于自主规划、工具使用和多步骤交互环境中。主流叙事将智能体性能归因于底层模型能力。**本综述挑战了这一假设。**
+LLM agent 并不只依靠模型推理行动。执行 harness 负责组装观察、调用模型、路由工具、保存状态、执行策略、记录轨迹，并决定任务何时停止或恢复。因此，只报告模型会遗漏被评测系统的重要组成部分。
 
-我们提出了**Agent Harness**的形式化定义，将其定义为包含六个组件的元组：
+| 组件 | 符号 | 治理功能 |
+|---|:---:|---|
+| 执行循环 | **E** | 回合/步骤控制、终止、重试与恢复 |
+| 工具注册 | **T** | 类型化工具、路由、校验与结果处理 |
+| 上下文管理 | **C** | prompt 组装、检索、压缩与显著性管理 |
+| 状态存储 | **S** | 跨回合/会话持久化、checkpoint 与恢复 |
+| 生命周期钩子 | **L** | 身份、审批、策略、插桩与拦截 |
+| 评测接口 | **V** | 轨迹、中间状态、结果信号与实验集成 |
 
-| 组件 | 符号 | 作用 |
-|------|------|------|
-| 执行循环 | **E** | 观察-思考-行动循环，终止条件，错误恢复 |
-| 工具注册表 | **T** | 类型化工具目录，路由，监控，模式校验 |
-| 上下文管理器 | **C** | 上下文窗口内容选择，压缩，检索 |
-| 状态存储 | **S** | 跨回合/会话持久化，崩溃恢复 |
-| 生命周期钩子 | **L** | 认证，日志，策略执行，监测埋点 |
-| 评估接口 | **V** | 行动轨迹，中间状态，成功信号 |
-
-**Agent Harness重要性的关键实证证据：**
-- 🔥 Pi Research：Grok Code Fast 1 模型在 SWE-bench 上从 **6.7% → 68.3%**，仅通过修改Agent Harness的编辑工具格式——模型不变
-- 💀 OpenAI Codex：5个月内生成**100万行代码，0行手写**——失败归因于"环境规范不足"而非模型能力
-- ⚡ Stripe Minions：**每周1300个PR，0行人工代码**——Agent Harness优先
-- 📉 METR：通过基准测试的PR人工合并率**低24.2个百分点**，差距以9.6pp/年速度扩大——评估Agent Harness有效性危机
-- 💬 *"Agent Harness是底盘；模型是引擎。"* ——2026年业界共识
-
-<p align="center">
-  <img src="assets/root_cause_diagram.png" width="640" alt="根因分析"/>
-</p>
-
-### 本综述的学术贡献
-
-**概念贡献：**我们将Agent Harness形式化为具有六个可治理组件（E, T, C, S, L, V）的架构对象，将其从隐式基础设施提升为显式研究目标。
-
-**实证范围：**我们系统性地综述了110余篇论文，涵盖学术研究（评估基准、安全框架、记忆架构）和生产部署（Stripe、OpenAI、Cursor、METR），确立了Agent Harness设计是已部署智能体可靠性的约束瓶颈这一观点。
-
-**方法论进展：**我们引入了**Agent Harness完备性矩阵**——一个结构化评估框架，映射每个系统实现了六个组件中的哪些——使得先前综述无法实现的异构智能体系统直接对比成为可能。
-
-**已识别的开放挑战：**我们记录了九项技术挑战，这些挑战当前研究仅提供了部分解决方案而无生产级基础设施：形式化安全模型、跨工程框架可移植性、协议互操作性（MCP/A2A）、百万级token/任务的上下文经济性、多智能体系统中的拜占庭容错、组合式验证。
-
-**学术界与业界的桥梁：**与先前仅关注模型能力或孤立组件（记忆、规划、工具使用）的综述不同，我们综合了同行评审研究与生产部署报告，展示了理论与实践的交汇点——以及仍存在的关键差距。
-
-**目标读者：**设计智能体基础设施的研究者、构建生产系统的实践者、以及试图理解为何基准测试性能常无法预测部署结果的评估者。
-
----
+本索引同时收录同行评审研究、预印本、一方技术文档、源代码和明确标记的业界实践报告。矩阵单元格依据公开一方材料编码；stars 和热度不作为组件证据，也不作为成熟度评分。
 
 ## 历史时间线
 
@@ -135,160 +97,90 @@
 | 2023 | AgentBench, SWE-bench | 智能体评估基础设施涌现 |
 | 2024 | MetaGPT, WebArena, ToolLLM, SWE-agent, OSWorld | 全栈执行器；真实世界环境基准测试 |
 | 2024 | CodeAct, LATS, Tree of Thoughts | 结构化动作空间；搜索增强规划 |
-| 2024年11月 | Anthropic 发布 MCP 协议 | 首个主要工具↔Harness标准化（2–15ms延迟） |
-| 2025 | HAL, AIOS, LangGraph | 基准测试统一（21,730次评估）；操作系统级调度（2.1×加速） |
-| 2025 | Google 发布 A2A 协议 | 智能体↔智能体标准化（50–200ms） |
-| 2025 | MemoryOS, SkillsBench†, AgentBound† | 记忆操作系统抽象；技能即上下文（+16.2pp）；安全认证 |
-| 2026年1–3月 | AgencyBench†, SandboxEscapeBench†, PRISM†, AEGIS†, SkillFortify†, Schema First† | 计算经济学；15–35%逃逸率；运行时安全；模式规范 |
+| 2024年11月 | Anthropic 发布 MCP 协议 | 工具↔harness 接口标准化 |
+| 2025 | HAL、AIOS、LangGraph | 评测基础设施、agent 操作系统与有状态图 runtime |
+| 2025 | Google 发布 A2A 协议 | agent↔agent 接口标准化 |
+| 2025 | MemoryOS、AgentBound† | 记忆抽象与 runtime 安全执行 |
+| 2026年1–10月 | SkillsBench†、Harness-Bench、EVOHARNESSBENCH、HarnessRisk、HarnessSecurity-Bench、LoopsBench、SCLATE | skill 评测、直接 harness 比较、演化、生命周期风险、长时循环与可审计 runtime 基础设施 |
 
 *† 表示预印本，尚未经同行评审*
 
 ---
 
-## Agent Harness完备性矩阵
+## 核心系统矩阵
 
-**图例：** ✓ 完全支持 · ≈ 部分支持 · ✗ 缺失
+核心比较集固定为 **20 个系统**，依据架构相关性、公开证据、活跃维护状态以及是否代表独特 harness 路线选取。评分只描述资料截止时间内可核验的组件覆盖，不是质量排名。
 
-当前矩阵包含 **29 个系统**，随资源库持续更新。
+**证据图例：**● 完整——内置且有文档 · ◐ 部分——能力有限、可选或依赖官方扩展 · ○ 缺失——一方材料明确排除 · ? 未核验——公开证据不足。
 
-<table align="center">
-  <thead>
-    <tr>
-      <th>类别</th>
-      <th>系统</th>
-      <th title="执行循环">E</th>
-      <th title="工具注册表">T</th>
-      <th title="上下文管理器">C</th>
-      <th title="状态存储">S</th>
-      <th title="生命周期钩子">L</th>
-      <th title="评估接口">V</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td rowspan="7"><strong>全栈式<br>Agent Harness</strong></td>
-      <td>Claude Code</td>
-      <td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>≈</td>
-    </tr>
-    <tr>
-      <td>Codex</td>
-      <td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>≈</td>
-    </tr>
-    <tr>
-      <td>DeepSeek Harness</td>
-      <td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>≈</td>
-    </tr>
-    <tr>
-      <td>SandBase Harness</td>
-      <td>✓</td><td>✓</td><td>≈</td><td>✓</td><td>✓</td><td>≈</td>
-    </tr>
-    <tr>
-      <td>OpenClaw / PRISM</td>
-      <td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td>
-    </tr>
-    <tr>
-      <td>AIOS</td>
-      <td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>≈</td>
-    </tr>
-    <tr>
-      <td>OpenHands</td>
-      <td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>≈</td>
-    </tr>
-    <tr>
-      <td rowspan="6"><strong>多智能体<br>执行器</strong></td>
-      <td>MetaGPT</td>
-      <td>✓</td><td>✓</td><td>≈</td><td>≈</td><td>≈</td><td>≈</td>
-    </tr>
-    <tr>
-      <td>AutoGen</td>
-      <td>✓</td><td>✓</td><td>≈</td><td>≈</td><td>≈</td><td>≈</td>
-    </tr>
-    <tr>
-      <td>ChatDev</td>
-      <td>✓</td><td>≈</td><td>≈</td><td>≈</td><td>≈</td><td>≈</td>
-    </tr>
-    <tr>
-      <td>CAMEL</td>
-      <td>✓</td><td>≈</td><td>≈</td><td>≈</td><td>✗</td><td>≈</td>
-    </tr>
-    <tr>
-      <td>DeerFlow</td>
-      <td>✓</td><td>✓</td><td>≈</td><td>≈</td><td>≈</td><td>≈</td>
-    </tr>
-    <tr>
-      <td>DeepAgents</td>
-      <td>✓</td><td>✓</td><td>≈</td><td>≈</td><td>≈</td><td>≈</td>
-    </tr>
-    <tr>
-      <td rowspan="3"><strong>通用<br>框架</strong></td>
-      <td>LangChain</td>
-      <td>✓</td><td>✓</td><td>✓</td><td>≈</td><td>≈</td><td>✗</td>
-    </tr>
-    <tr>
-      <td>LangGraph</td>
-      <td>✓</td><td>≈</td><td>≈</td><td>≈</td><td>✗</td><td>✗</td>
-    </tr>
-    <tr>
-      <td>LlamaIndex</td>
-      <td>≈</td><td>✓</td><td>✓</td><td>≈</td><td>✗</td><td>✗</td>
-    </tr>
-    <tr>
-      <td rowspan="3"><strong>专用<br>约束工程</strong></td>
-      <td>SWE-agent</td>
-      <td>✓</td><td>✓</td><td>✓</td><td>≈</td><td>≈</td><td>✓</td>
-    </tr>
-    <tr>
-      <td>agent-qa</td>
-      <td>✓</td><td>✓</td><td>≈</td><td>✓</td><td>✓</td><td>✓</td>
-    </tr>
-    <tr>
-      <td>YYLO</td>
-      <td>✓</td><td>≈</td><td>≈</td><td>✓</td><td>✓</td><td>≈</td>
-    </tr>
-    <tr>
-      <td rowspan="5"><strong>能力<br>模块</strong></td>
-      <td>MemGPT</td>
-      <td>✗</td><td>✗</td><td>✓</td><td>✓</td><td>✗</td><td>✗</td>
-    </tr>
-    <tr>
-      <td>Voyager</td>
-      <td>✓</td><td>✓</td><td>≈</td><td>✓</td><td>✗</td><td>≈</td>
-    </tr>
-    <tr>
-      <td>Reflexion</td>
-      <td>≈</td><td>✗</td><td>≈</td><td>✓</td><td>✗</td><td>≈</td>
-    </tr>
-    <tr>
-      <td>Generative Agents</td>
-      <td>✓</td><td>✗</td><td>≈</td><td>✓</td><td>✗</td><td>≈</td>
-    </tr>
-    <tr>
-      <td>Concordia</td>
-      <td>✓</td><td>✗</td><td>≈</td><td>✓</td><td>✗</td><td>≈</td>
-    </tr>
-    <tr>
-      <td rowspan="5"><strong>评估<br>基础设施</strong></td>
-      <td>HAL</td>
-      <td>✓</td><td>✓</td><td>≈</td><td>≈</td><td>≈</td><td>✓</td>
-    </tr>
-    <tr>
-      <td>AgentBench</td>
-      <td>✓</td><td>≈</td><td>≈</td><td>≈</td><td>✗</td><td>✓</td>
-    </tr>
-    <tr>
-      <td>OSWorld</td>
-      <td>✓</td><td>≈</td><td>≈</td><td>≈</td><td>✗</td><td>✓</td>
-    </tr>
-    <tr>
-      <td>BrowserGym</td>
-      <td>✓</td><td>✓</td><td>≈</td><td>≈</td><td>✗</td><td>✓</td>
-    </tr>
-    <tr>
-      <td>YYLO Benchmark</td>
-      <td>≈</td><td>✗</td><td>≈</td><td>✓</td><td>≈</td><td>✓</td>
-    </tr>
-  </tbody>
-</table>
+| Category | System | E | T | C | S | L | V |
+|---|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| 重点 Coding Harness | **Claude Code** | ● | ● | ● | ◐ | ● | ◐ |
+| 重点 Coding Harness | **Codex** | ● | ● | ● | ● | ● | ◐ |
+| 重点 Coding Harness | **DeepSeek Harness** | ● | ● | ● | ● | ● | ◐ |
+| 重点 Coding Harness | **OpenClaw** | ● | ● | ● | ● | ● | ◐ |
+| Coding Harness | **Gemini CLI** | ● | ● | ● | ● | ● | ◐ |
+| Coding Harness | **OpenCode** | ● | ● | ● | ● | ● | ◐ |
+| Coding Harness | **Goose** | ● | ● | ◐ | ◐ | ● | ◐ |
+| Coding Harness | **Grok Build** | ● | ● | ● | ● | ● | ◐ |
+| Coding Harness | **Cline** | ● | ● | ◐ | ● | ● | ◐ |
+| Coding Harness | **OpenHands** | ● | ● | ● | ● | ● | ◐ |
+| Coding Harness | **Deep Agents** | ● | ● | ● | ● | ● | ● |
+| Coding Harness | **Prime Agent** | ● | ● | ● | ● | ● | ◐ |
+| 通用 Runtime | **OpenAI Agents SDK** | ● | ● | ● | ● | ● | ● |
+| 通用 Runtime | **Google ADK** | ● | ● | ● | ● | ● | ● |
+| 通用 Runtime | **Microsoft Agent Framework** | ● | ● | ● | ● | ● | ● |
+| 通用 Runtime | **LangGraph** | ● | ● | ● | ● | ◐ | ◐ |
+| 其他代表路线 | **DeerFlow** | ● | ● | ● | ● | ● | ◐ |
+| 其他代表路线 | **AIOS** | ● | ● | ● | ● | ● | ◐ |
+| 其他代表路线 | **AOHP** | ● | ● | ● | ● | ● | ◐ |
+| 其他代表路线 | **Omnigent** | ● | ● | ◐ | ● | ● | ◐ |
+
+矩阵以一个一方产品或仓库作为一个系统边界。安全扩展、benchmark、能力模块和第三方插件不会为了补全组件而与核心系统合并。
+
+## Benchmark 图谱
+
+Harness 研究需要先区分被改变的对象。任务环境回答 agent 能否完成某类任务；harness benchmark 则尽量固定模型、任务、环境或预算，测量 runtime 设计如何改变行为。
+
+### 1. Harness effect
+
+- [Harness-Bench](https://arxiv.org/abs/2605.27922)：在共享的 sandbox task、环境、预算与评测协议下比较 model–harness configuration。
+- [Beyond the Model](https://arxiv.org/abs/2609.32459)：通过组件变化研究 tool registry、context compression、planning、subagent 与 lazy skill。
+- [LongHarness Bench](https://arxiv.org/abs/2609.38137)：评测 long-context harness 的准确性和效率。
+- [Harness the Memory](https://arxiv.org/abs/2608.15008)：在共享 harness 中跨模型和任务集比较 memory substrate。
+
+### 2. Harness evolution 与 runtime self-improvement
+
+- [EVOHARNESSBENCH](https://arxiv.org/abs/2609.04280)：评测工具、skill 与 agent 随时间变化时的 retention 和 adaptation。
+- [SkillOpt](https://arxiv.org/abs/2605.23904)：从带分数的 trajectory 产生有界 skill edit，并使用 held-out gate 决定是否接受。
+- [SCLATE](https://arxiv.org/abs/2609.32391)：将 session、scheduled task 与 memory consolidation 放在共享事件时间线上。
+- [TaoLive](https://arxiv.org/abs/2608.15763)、[Meta-Harness](https://arxiv.org/abs/2603.28052)、[AutoHarness](https://arxiv.org/abs/2603.03329) 与 [VeRO](https://arxiv.org/abs/2602.22480) 分别研究 harness-aware training、harness optimization、自动生成 harness 与 agents evaluating agents。
+
+### 3. Lifecycle、security 与 audit
+
+- [HarnessRisk](https://arxiv.org/abs/2608.17597)：覆盖 configuration、extension、runtime、persistence、action 与 recovery 阶段。
+- [HarnessSecurity-Bench](https://arxiv.org/abs/2610.07639)：比较真实 coding harness 与不同权限设置下的 utility 和 attack effect。
+- [Hearsay](https://arxiv.org/abs/2609.32495)：测试 harness 自身生成的记录能否支持独立审计。
+- [SandboxEscapeBench](https://arxiv.org/abs/2603.02277)：测试模型能否发现并利用 nested sandbox 中人为植入的错误配置与漏洞。
+
+### 4. Long-horizon loop 与 recovery
+
+- [LoopsBench](https://arxiv.org/abs/2608.00267)、[Long-Horizon-Terminal-Bench](https://arxiv.org/abs/2607.08964)、[SWE-Chain](https://arxiv.org/abs/2605.14415) 与 [ChainSWE](https://arxiv.org/abs/2607.02606) 评测持续开发、累积状态、回归义务与依赖修改。
+- [Hell or High Water](https://arxiv.org/abs/2508.11027) 评测外部失败后的恢复。
+
+### 5. Protocol 与 tool substrate
+
+- [DynamicMCPBench](https://arxiv.org/abs/2607.20531)、[MCP-Bench](https://arxiv.org/abs/2508.20453)、[MCP-AgentBench](https://arxiv.org/abs/2509.09734) 与 [MCPAgentBench](https://arxiv.org/abs/2512.24565) 分别测试 live/stateful MCP、端到端结果和工具区分能力。
+
+### 6. Evaluation infrastructure
+
+- [AgentCompass](https://arxiv.org/abs/2607.13705) 分离 benchmark、harness 与 environment。
+- [Harbor](https://github.com/harbor-framework/harbor) 支持可替换 agent、model、dataset、container environment、trace 与并行 rollout。
+- [HAL](https://arxiv.org/abs/2510.11977) 提供统一执行与 leaderboard 基础设施。
+
+### 任务环境与部署 benchmark
+
+[AgencyBench](https://arxiv.org/abs/2601.11044)、[ClawBench](https://github.com/TIGER-AI-Lab/ClawBench)、[OSWorld](https://github.com/xlang-ai/OSWorld)、[WebArena](https://github.com/web-arena-x/webarena)、[GAIA](https://arxiv.org/abs/2311.12983) 与 [SWE-bench](https://github.com/swe-bench/SWE-bench) 仍然是重要任务环境。报告结果时应同时说明 model、harness、environment、budget 与 evaluation version。
 
 ---
 
@@ -298,7 +190,7 @@
 
 #### 软件测试Harness (1990s–2000s)
 
-- <u>JUnit</u>: **"JUnit: A Cook's Tour"**. *Beck & Gamma.* Java Report, 4(5), May 1999. [[文章](http://junit.sourceforge.net/doc/cookstour/cookstour.htm)]
+- <u>JUnit</u>: **"JUnit: A Cook's Tour"**. *Beck & Gamma.* Java Report, 4(5), May 1999. [[存档文章](https://web.archive.org/web/20200101000000/http://junit.sourceforge.net/doc/cookstour/cookstour.htm)]
 
 #### 强化学习环境Harness框架 (2016–2022)
 
@@ -316,76 +208,33 @@
 
 ---
 
-### Agent Harness分类
+### 系统目录
 
-**分类依据：**我们根据**Agent Harness完备性**对智能体系统进行分类——即每个系统实现了六个组件（E, T, C, S, L, V）中的哪些——从而区分全栈Harness（全部六个组件）与专用框架（部分实现）。
+#### 四个重点系统
 
-**重要性：**先前的分类法按应用领域（编程、网页导航、具身AI）或模型架构（单智能体、多智能体）对智能体进行分类。这些分类无法解释为何使用相似模型的系统会产生不同的可靠性结果。我们以Agent Harness框架为中心的分类法揭示，生产级系统收敛于完整的ETCSLV实现，而研究原型往往仅实现2-3个组件。
+**Claude Code。** Claude Code 通过统一的 coding-agent loop 连接仓库检查、编辑、命令执行、Web 与 MCP 工具、subagent、skill、hook、权限规则、checkpoint 和会话续接。上下文层组合项目指令、对话状态、工具结果和压缩机制；hook 与 permission mode 将策略判断放进执行路径，transcript 与可观测性集成记录 runtime 行为。本文将其视为垂直集成的 coding harness；CLI 与 Agent SDK 是相关 runtime 能力的不同接口。[[代码](https://github.com/anthropics/claude-code)] [[Agent SDK](https://github.com/anthropics/claude-agent-sdk-python)]
 
-**核心发现：**没有任何智能体框架能够在不实现**全部六个治理组件**的情况下达到生产可靠性。缺少L组件（生命周期钩子）的系统无法执行安全策略。缺少V组件（评估接口）的系统无法调试故障。缺少S组件（状态持久化）的系统无法从崩溃中恢复。
+**Codex。** Codex 通过统一 agent runtime 连接仓库探索、编辑、命令执行、验证、sandbox、approval、MCP 工具、skill、subagent 与可恢复 thread。执行循环协调模型请求和工具结果，context compaction 管理增长的历史，持久 rollout 与 thread state 支持跨会话工作，结构化事件和 trace 支持检查与评测；approval 决策与 sandbox 约束保持为明确的 runtime control。CLI、IDE 集成、桌面应用和云端执行是同一 harness 家族的不同使用界面，不作为四个独立系统统计。[[代码](https://github.com/openai/codex)] [[Harness engineering](https://openai.com/index/harness-engineering/)]
 
-#### 全栈式Agent Harness
+**DeepSeek Harness。** DeepSeek Harness 使用 Cordis plugin、profile、bundle 和有序 patch，使 model adapter、agent loop、tool registry、session log、storage、sandbox、compaction、telemetry 与用户界面可组合。持久 session log 是 model context、resume、fork、transcript 和 telemetry 的共同来源；类型化工具执行经过校验与 pre/post-execution policy hook。这些可替换、可逆的边界已经提供实现 harness-level runtime recursive self-improvement 的主要底座：外部优化器可以提出有界的 profile 或 plugin 修改，在 held-out task 上评测，并接受、版本化或回滚候选方案。[[代码](https://github.com/deepseek-ai/deepseek-harness)] [[架构](https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/architecture.md)]
 
-- <u>Codex</u>: **"Codex: Lightweight coding agent that runs in your terminal"**. *OpenAI.* GitHub. [[代码](https://github.com/openai/codex)]
-- <u>DeepSeek Harness</u>: **"DeepSeek Harness: Everything is a Plugin"**. *DeepSeek-AI.* GitHub 2026. [[代码](https://github.com/deepseek-ai/deepseek-harness)]
-- <u>SandBase Harness</u>: **"SandBase Harness: Local-first, self-hosted AI agent runtime and MCP bridge"**. *SandBase AI.* GitHub 2026. [[代码](https://github.com/sandbaseai/sandbase-harness)]
-- <u>PRISM/OpenClaw</u>: **"OpenClaw PRISM: A Zero-Fork, Defense-in-Depth Runtime Security Layer for Tool-Augmented LLM Agents"**. *Li.* arXiv 2026. [[论文](https://arxiv.org/abs/2603.11853)]
-- <u>AIOS</u>: **"AIOS: LLM Agent Operating System"**. *Mei et al.* COLM 2025. [[论文](https://arxiv.org/abs/2403.16971)] [[代码](https://github.com/agiresearch/AIOS)]
-- <u>OpenHands</u>: **"OpenHands: An Open Platform for AI Software Developers as Generalist Agents"**. *Wang et al.* ICLR 2025. [[论文](https://arxiv.org/abs/2407.16741)] [[代码](https://github.com/All-Hands-AI/OpenHands)]
-- <u>SWE-agent</u>: **"SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering"**. *Yang et al.* NeurIPS 2024. [[论文](https://arxiv.org/abs/2405.15793)] [[代码](https://github.com/SWE-agent/SWE-agent)]
-- <u>HAL</u>: **"Holistic Agent Leaderboard: The Missing Infrastructure for AI Agent Evaluation"**. *Kapoor et al.* ICLR 2026. [[论文](https://arxiv.org/abs/2510.11977)]
+**OpenClaw。** OpenClaw 代表 always-on personal-agent harness，将 channel、session、tool、skill、memory、scheduled work、gateway routing 与 sandbox execution 连接起来。它的代表性来自部署连续性：身份、凭证、channel ingress、后台任务、workspace state 与运行策略不随单次对话结束。明确的 tool/channel 边界、持久 workspace、定时执行与运行日志使长时任务能够恢复和检查。核心 OpenClaw 与 PRISM 等安全扩展分开评估，以保持矩阵中的系统边界一致。[[代码](https://github.com/openclaw/openclaw)]
 
+#### 核心比较系统
 
-**Codex——面向软件工程的一体化执行框架。** Codex 将仓库探索、代码修改、命令执行和结果验证组织在共享的智能体运行时中。执行循环（E）协调模型请求与工具结果，工具注册表（T）分发内置工具及 MCP 调用，上下文压缩（C）管理不断增长的对话历史，持久化执行记录与可恢复会话（S）支持跨会话接续工作。工具编排将审批、沙箱选择和重试处理纳入执行路径（L），结构化事件与工具轨迹则为过程检查和评估提供基础（V）。Codex 因而体现了一个典型的 harness 工程问题：如何把模型的编码能力组织成能够持续推进的开发流程。[[核心运行时](https://github.com/openai/codex/tree/main/codex-rs/core)] [[工具编排](https://github.com/openai/codex/blob/main/codex-rs/core/src/tools/orchestrator.rs)]
+- **Coding harness：**[Gemini CLI](https://github.com/google-gemini/gemini-cli)、[OpenCode](https://github.com/anomalyco/opencode)、[Goose](https://github.com/aaif-goose/goose)、[Grok Build](https://github.com/xai-org/grok-build)、[Cline](https://github.com/cline/cline)、[OpenHands](https://github.com/OpenHands/OpenHands)、[Deep Agents](https://github.com/langchain-ai/deepagents)、[Prime Agent](https://github.com/PrimeIntellect-ai/prime-agent)。
+- **通用 runtime：**[OpenAI Agents SDK](https://github.com/openai/openai-agents-python)、[Google ADK](https://github.com/google/adk-python)、[Microsoft Agent Framework](https://github.com/microsoft/agent-framework)、[LangGraph](https://github.com/langchain-ai/langgraph)。
+- **其他代表路线：**[DeerFlow](https://github.com/bytedance/deer-flow)、[AIOS](https://github.com/agiresearch/AIOS)、[AOHP](https://github.com/aohp-os/aohp)、[Omnigent](https://github.com/omnigent-ai/omnigent)。
 
-**DeepSeek Harness——以插件组合运行时治理能力。** DeepSeek Harness 基于 Cordis，将模型适配器、执行循环、工具注册表、会话日志及外围能力都实现为可替换的插件，通过 profile 与 bundle 组合成完整系统。默认循环（E）协调轮次和执行步骤，类型化工具（T）经过参数校验和执行前后钩子（L），持久化会话日志（S）提供构建模型上下文的历史基础。提示词组装与压缩插件管理上下文（C），类型化会话事件与遥测暴露执行轨迹（V）。它为综述提供了一条鲜明的架构路线：将治理职责与具体实现分开，使执行循环、上下文策略和工具行为都能围绕共享接口进行替换与组合。[[架构](https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/architecture.md)] [[工具机制](https://github.com/deepseek-ai/deepseek-harness/blob/master/packages/core/tools/README.md)] [[上下文压缩](https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/subsystems/compaction.md)]
+#### 扩展目录与相邻层
 
-#### 多智能体Agent Harness
-
-- <u>MetaGPT</u>: **"MetaGPT: Meta Programming for a Multi-Agent Collaborative Framework"**. *Hong et al.* ICLR 2024. [[论文](https://arxiv.org/abs/2308.00352)] [[代码](https://github.com/geekan/MetaGPT)]
-- <u>AutoGen</u>: **"AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation"**. *Wu et al.* arXiv 2023. [[论文](https://arxiv.org/abs/2308.08155)] [[代码](https://github.com/microsoft/autogen)]
-- <u>ChatDev</u>: **"ChatDev: Communicative Agents for Software Development"**. *Qian et al.* ACL 2024. [[论文](https://arxiv.org/abs/2307.07924)] [[代码](https://github.com/OpenBMB/ChatDev)]
-- <u>CAMEL</u>: **"CAMEL: Communicative Agents for 'Mind' Exploration of Large Language Model Society"**. *Li et al.* NeurIPS 2023. [[论文](https://arxiv.org/abs/2303.17760)] [[代码](https://github.com/camel-ai/camel)]
-- <u>Raven</u>: **"Raven: The Harness of Harnesses for Composable Agentic Intelligence"**. *EverMind AI.* Technical Report 2026. [[论文](https://github.com/EverMind-AI/Raven/releases/download/tech-report-v1/technical-report.pdf)] [[代码](https://github.com/EverMind-AI/Raven)]
-
-#### 框架与模块
-
-- <u>LangGraph</u>: **"LangGraph: Build Resilient Language Agents as Graphs"**. *LangChain team.* GitHub 2024. [[代码](https://github.com/langchain-ai/langgraph)]
-- <u>CrewAI</u>: **"CrewAI: Framework for Orchestrating Role-Playing, Autonomous AI Agents"**. *Moura et al.* GitHub 2024. [[代码](https://github.com/crewAIInc/crewAI)]
-- <u>PydanticAI</u>: **"PydanticAI: Agent Framework for Production-Grade GenAI Applications"**. *Pydantic Team.* GitHub 2024. [[代码](https://github.com/pydantic/pydantic-ai)]
-- <u>smolagents</u>: **"smolagents: A Smol Library to Build Great Agentic Systems"**. *Roucher et al.* GitHub 2025. [[代码](https://github.com/huggingface/smolagents)]
-- <u>Hermes Agent</u>: **"Hermes Agent: Self-Improving AI Agent Framework"**. *Nous Research.* GitHub 2026. [[代码](https://github.com/nousresearch/hermes-agent)] [[文档](https://hermes-agent.nousresearch.com/docs/)]
-- <u>AWS Multi-Agent Orchestrator</u>: **"Multi-Agent Orchestrator"**. *Amazon Web Services.* GitHub 2024. [[代码](https://github.com/awslabs/agent-squad)]
-- <u>MemGPT</u>: **"MemGPT: Towards LLMs as Operating Systems"**. *Packer et al.* NeurIPS 2023. [[论文](https://arxiv.org/abs/2310.08560)] [[代码](https://github.com/cpacker/MemGPT)]
-- <u>Voyager</u>: **"Voyager: An Open-Ended Embodied Agent with Large Language Models"**. *Wang et al.* arXiv 2023. [[论文](https://arxiv.org/abs/2305.16291)] [[代码](https://github.com/MineDojo/Voyager)]
-- <u>Reflexion</u>: **"Reflexion: Language Agents with Verbal Reinforcement Learning"**. *Shinn et al.* NeurIPS 2023. [[论文](https://arxiv.org/abs/2303.11366)] [[代码](https://github.com/noahshinn/reflexion)]
-- <u>Generative Agents</u>: **"Generative Agents: Interactive Simulacra of Human Behavior"**. *Park et al.* UIST 2023. [[论文](https://arxiv.org/abs/2304.03442)] [[代码](https://github.com/joonspk-research/generative_agents)]
-- <u>LangChain</u>: **"LangChain: Building Applications with LLMs through Composability"**. *Chase et al.* GitHub 2022. [[代码](https://github.com/langchain-ai/langchain)]
-- <u>LlamaIndex</u>: **"LlamaIndex: A Data Framework for LLM Applications"**. *Liu et al.* GitHub 2022. [[代码](https://github.com/run-llama/llama_index)]
-- <u>DeerFlow</u>: **"DeerFlow: Distributed Workflow Engine for LLM Agents"**. *GitHub 2024.* [[代码](https://github.com/modelscope/DeerFlow)]
-- <u>DeepAgents</u>: **"DeepAgents: Multi-Agent Framework for Deep Learning"**. *GitHub 2024.* [[代码](https://github.com/deepagents/deepagents)]
-- <u>YYLO</u>: **"YYLO: AI Coding-Agent Orchestration CLI"**. *yylo-dev.* GitHub 2026. [[代码](https://github.com/yylo-dev/yylo)]
-
-#### 评估基础设施
-
-- <u>lm-evaluation-harness</u>: **"lm-evaluation-harness"**. *Gao et al.* GitHub 2021. [[代码](https://github.com/EleutherAI/lm-evaluation-harness)]
-- <u>agent-qa</u>: **"agent-qa: Self-Improving QA Harness with Memory"**. *Vostride.* GitHub 2026. [[代码](https://github.com/vostride/agent-qa)]
-- <u>YYLO Benchmark</u>: **"YYLO Benchmark: Longitudinal Evaluation and Immutable Evidence for Agent Runs"**. *yylo-dev.* GitHub 2026. [[代码](https://github.com/yylo-dev/yylo-benchmark)]
-- <u>API-Bank</u>: **"Api-bank: A comprehensive benchmark for tool-augmented llms"**. *Li et al.* EMNLP 2023. [[论文](https://aclanthology.org/2023.emnlp-main.187/)]
-- <u>AgentBench</u>: **"AgentBench: Evaluating LLMs as Agents"**. *Liu et al.* ICLR 2024. [[论文](https://arxiv.org/abs/2308.03688)] [[代码](https://github.com/THUDM/AgentBench)]
-- <u>SWE-bench</u>: **"SWE-bench: Can Language Models Resolve Real-World GitHub Issues?"**. *Jimenez et al.* ICLR 2024. [[论文](https://arxiv.org/abs/2310.06770)] [[代码](https://github.com/swebench/SWE-bench)]
-- <u>OSWorld</u>: **"OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments"**. *Xie et al.* NeurIPS 2024. [[论文](https://arxiv.org/abs/2404.07972)] [[代码](https://github.com/xlang-ai/OSWorld)]
-- <u>WebArena</u>: **"WebArena: A Realistic Web Environment for Building Autonomous Agents"**. *Zhou et al.* ICLR 2024. [[论文](https://arxiv.org/abs/2307.13854)] [[代码](https://github.com/web-arena-x/webarena)]
-- <u>GAIA</u>: **"GAIA: A Benchmark for General AI Assistants"**. *Mialon et al.* ICLR 2024. [[论文](https://arxiv.org/abs/2311.12983)]
-- <u>Mind2Web</u>: **"Mind2Web: Towards a Generalist Agent for the Web"**. *Deng et al.* NeurIPS 2023. [[论文](https://arxiv.org/abs/2306.06070)]
-- <u>AgentBoard</u>: **"AgentBoard: An Analytical Evaluation Board of Multi-Turn LLM Agents"**. *Ma et al.* NeurIPS 2024. [[论文](https://arxiv.org/abs/2401.13178)]
-- <u>InterCode</u>: **"InterCode: Standardizing and Benchmarking Interactive Coding with Execution Feedback"**. *Yang et al.* NeurIPS 2023. [[论文](https://arxiv.org/abs/2306.14898)]
-
----
+- **扩展 harness 目录：**[Aider](https://github.com/Aider-AI/aider)、[SWE-agent](https://github.com/SWE-agent/SWE-agent)、[Mastra](https://github.com/mastra-ai/mastra)、[AutoGen](https://github.com/microsoft/autogen)、[MetaGPT](https://github.com/geekan/MetaGPT)、[CAMEL](https://github.com/camel-ai/camel)、[ChatDev](https://github.com/OpenBMB/ChatDev)、[Raven](https://github.com/EverMind-AI/Raven)、[Hermes Agent](https://github.com/nousresearch/hermes-agent)、[SandBase](https://github.com/sandbaseai/sandbase-harness)、[MiMo-Code](https://github.com/XiaomiMiMo/MiMo-Code)、[Open SWE](https://github.com/langchain-ai/open-swe)、[QM](https://github.com/yc-software/qm)、[Eve](https://github.com/vercel/eve)、[Shepherd](https://github.com/shepherd-agents/shepherd)、[YYLO](https://github.com/yylo-dev/yylo)。
+- **能力模块与研究模式：**[MemGPT](https://github.com/cpacker/MemGPT)、[Reflexion](https://github.com/noahshinn/reflexion)、[Voyager](https://github.com/MineDojo/Voyager)、[Generative Agents](https://github.com/joonspk-research/generative_agents)、[Concordia](https://github.com/google-deepmind/concordia)、[SkillOpt](https://github.com/microsoft/SkillOpt)。直接说明这些对象的专门作用，不再把较窄范围解释为“不完整的生产 harness”。
+- **评测基础设施：**[HAL](https://arxiv.org/abs/2510.11977)、[Harbor](https://github.com/harbor-framework/harbor)、[AgentCompass](https://arxiv.org/abs/2607.13705)、[BrowserGym](https://github.com/ServiceNow/BrowserGym) 及相关 runner 作为基础设施比较，不与 agent 产品混为一类。
 
 ### 技术挑战
 
-**范围界定：**我们识别了九项开放研究问题，当前Agent Harness基础设施针对这些问题仅提供了部分解决方案，而缺乏生产级、可推广的框架。每项挑战都代表了学术原型所展示的成果与已部署系统所需条件之间的差距。
+**范围：**本节归纳反复出现的工程问题。现有 harness 基础设施对这些问题提供了部分方案，而学术原型与部署系统暴露出不同约束。
 
 **评估标准：**对于每项挑战，我们评估：(1) **学术覆盖度**——同行评审解决方案（如有）；(2) **生产成熟度**——是否有任何已部署系统在规模上解决了该问题；(3) **阻塞严重性**——未解决的问题是阻止部署还是仅限制性能。
 
@@ -395,11 +244,11 @@
 
 **挑战：**智能体沙箱必须防止恶意工具使用，同时允许合法的系统访问——这比传统应用沙箱更困难，因为智能体**有意地**与敏感资源（文件系统、网络API、shell命令）交互。
 
-**技术现状：**SandboxEscapeBench 显示前沿模型能够逃逸容器；PRISM 展示了零分叉纵深防御是可能的，但需要操作系统级监测。尚不存在适用于所有智能体用例且无需人工逐任务配置的通用沙箱。
+**技术现状：**SandboxEscapeBench 测量模型能否利用人为设置的易受攻击 sandbox 配置，PRISM 则研究 runtime 拦截与纵深防御。两者共同指向对隔离边界和特权操作策略进行持续测试，但都不等于已经得到适用于所有 agent workload 的通用 sandbox 配置。
 
 **开放问题：**组合式安全属性（证明智能体+Harness+环境满足安全规范）仍未解决。当前防御是反应式的（检测逃逸）而非预防式的（证明逃逸不可能）。
 
-> **关键数据：**SandboxEscapeBench——前沿LLM达到**15–35%容器逃逸率**；PRISM——10个钩子的零分叉运行时将逃逸降至接近零，开销<5ms。
+> **证据重点：**SandboxEscapeBench 测试模型能否发现并利用人为植入的 sandbox 错误配置与漏洞。它说明需要持续验证配置并采用纵深防御，不能被解释为正确配置容器的通用逃逸率。
 
 - <u>SandboxEscapeBench</u>†: **"Quantifying Frontier LLM Capabilities for Container Sandbox Escape"**. *Marchand et al.* arXiv 2026. [[论文](https://arxiv.org/abs/2603.02277)]
 - <u>InjecAgent</u>: **"InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated Large Language Model Agents"**. *Zhan et al.* arXiv 2024. [[论文](https://arxiv.org/abs/2403.02691)]
@@ -424,7 +273,7 @@
 
 #### 评估与基准测试
 
-> **关键数据：**HAL 统一了**20,000+次评估**，将数周的评估压缩至数小时；OSWorld 报告了**28%假阴性率**的自动化评估；METR 发现通过基准测试的PR人工合并率**低24.2个百分点**，差距以9.6pp/年速度扩大。
+> **证据重点：**Harness 评测需要同时报告 runtime、environment、task version、budget、trajectory capture 与 evaluator。HAL、OSWorld 和 METR 分别展示执行方差、评测器误差以及 benchmark 接受与人工审查之间的差异。
 
 - <u>AgencyBench</u>†: **"AgencyBench: Benchmarking the Frontiers of Autonomous Agents in 1M-Token Real-World Contexts"**. *Li et al.* arXiv 2026. [[Paper](https://arxiv.org/abs/2601.11044)]
 - <u>AEGIS</u>†: **"AEGIS: No Tool Call Left Unchecked -- A Pre-Execution Firewall and Audit Layer for AI Agents"**. *Yuan et al.* arXiv 2026. [[Paper](https://arxiv.org/abs/2603.12621)]
@@ -434,7 +283,7 @@
 - <u>AutoHarness</u>†: **"AutoHarness: improving LLM agents by automatically synthesizing a code harness"**. *Lou et al.* arXiv 2026. [[Paper](https://arxiv.org/abs/2603.03329)]
 - <u>MASEval</u>†: **"MASEval: Extending Multi-Agent Evaluation from Models to Systems"**. *Emde et al.* arXiv 2026. [[Paper](https://arxiv.org/abs/2603.08835)]
 - <u>VeRO</u>†: **"VeRO: An Evaluation Harness for Agents to Optimize Agents"**. *Ursekar et al.* arXiv 2026. [[Paper](https://arxiv.org/abs/2602.22480)]
-- <u>ClawBench</u>†: **"ClawBench: Can AI Agents Complete Everyday Online Tasks?"**. *Zhang et al.* arXiv 2026. [[Paper](https://arxiv.org/abs/2604.08523)] [[Code](https://github.com/reacher-z/ClawBench)] [[Project](https://claw-bench.com/)]
+- <u>ClawBench</u>†: **"ClawBench: Can AI Agents Complete Everyday Online Tasks?"**. *Zhang et al.* arXiv 2026. [[Paper](https://arxiv.org/abs/2604.08523)] [[Code](https://github.com/TIGER-AI-Lab/ClawBench)] [[Project](https://claw-bench.com/)]
 - <u>TheAgentCompany</u>†: **"TheAgentCompany: Benchmarking LLM Agents on Consequential Real-World Tasks"**. *Xu et al.* arXiv 2024. [[Paper](https://arxiv.org/abs/2412.14161)]
 - <u>BrowserGym</u>†: **"The BrowserGym Ecosystem for Web Agent Research"**. *Le Sellier De Chezelles et al.* arXiv 2024. [[Paper](https://arxiv.org/abs/2412.05467)]
 - <u>WorkArena</u>†: **"WorkArena: How Capable are Web Agents at Solving Common Knowledge Work Tasks?"**. *Drouin et al.* arXiv 2024. [[Paper](https://arxiv.org/abs/2403.07718)]
@@ -442,21 +291,22 @@
 - <u>R2E</u>: **"R2E: Turning any GitHub Repository into a Programming Agent Environment"**. *Jain et al.* ICML 2024. [[Paper](https://proceedings.mlr.press/v235/jain24c.html)]
 - <u>Evaluation Survey</u>: **"Evaluation and Benchmarking of LLM Agents: A Survey"**. *Mohammadi et al.* KDD 2025. [[Paper](https://arxiv.org/abs/2507.21504)]
 - <u>PentestJudge</u>†: **"PentestJudge: Judging Agent Behavior Against Operational Requirements"**. *Caldwell et al.* arXiv 2025. [[Paper](https://arxiv.org/abs/2508.02921)]
+- <u>PerspectiveGap</u>†: **"PerspectiveGap: A Benchmark for Multi-Agent Orchestration Prompting"**. *Sun et al.* arXiv 2026. [[论文](https://arxiv.org/abs/2606.08878)] [[代码](https://github.com/WhymustIhaveaname/PerspectiveGap)]
 - <u>TraceDance</u>†: **"TraceDance: An Automated System for Building Agent Behavior Benchmarks from Real-World Agent Deployment Traces"**. *Min et al.* arXiv 2026. [[论文](https://arxiv.org/abs/2609.33295)] [[项目](https://zhishanq.github.io/TraceDance/)]
   - 从部署轨迹构建特定行为的评测集，在固定的已记录 harness 上下文中评估模型的下一轮输出，不执行其动作，也不重放环境。
 
 #### 协议标准化
 
-> **关键数据：**MCP（工具↔约束工程）：2–15ms延迟；A2A（智能体↔智能体）：50–200ms；ACP（意图级，IBM）——三种协议服务于互补角色。
+> **证据重点：**MCP、A2A、ACP 等协议处在不同接口层。协议的作用取决于语义、状态处理、授权、错误行为与可测试的互操作性，不能只比较协议名称。
 
 - <u>MCP</u>: **"Model Context Protocol"**. *Anthropic.* Technical Report 2024. [[Spec](https://modelcontextprotocol.io)]
-- <u>A2A</u>: **"Agent-to-Agent Protocol"**. *Google.* Technical Report 2025. [[规范](https://google.github.io/A2A/)] [[公告](https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/)]
+- <u>A2A</u>: **"Agent-to-Agent Protocol"**. *Google.* Technical Report 2025. [[规范](https://a2a-protocol.org/latest/)] [[公告](https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/)]
 - <u>Protocol Comparison</u>†: **"A Survey of Agent Interoperability Protocols: Model Context Protocol (MCP), Agent Communication Protocol (ACP), Agent-to-Agent Protocol (A2A), and Agent Network Protocol (ANP)"**. *Ehtesham et al.* arXiv 2025. [[论文](https://arxiv.org/abs/2505.02279)]
 - <u>Gorilla</u>: **"Gorilla: Large Language Model Connected with Massive APIs"**. *Patil et al.* NeurIPS 2023. [[Paper](https://arxiv.org/abs/2305.15334)] [[Code](https://github.com/ShishirPatil/gorilla)]
 
 #### 运行时上下文管理
 
-> **关键数据：**SkillsBench——精选技能注入产生**+16.2pp**改进；"迷失在中间"效应已被记录；长上下文模型将问题从*保留*转移至*显著性*。
+> **证据重点：**SkillsBench 与长上下文研究表明，增加上下文本身并不足够；选择、位置、压缩、来源和冲突处理共同决定新增材料是否真正帮助 agent。
 
 - <u>SkillsBench</u>†: **"SkillsBench: Benchmarking How Well Agent Skills Work Across Diverse Tasks"**. *Li et al.* arXiv 2026. [[Paper](https://arxiv.org/abs/2602.12670)]
 - <u>ReadAgent</u>: **"A Human-Inspired Reading Agent with Gist Memory of Very Long Contexts"**. *Lee et al.* ICML 2024. [[Paper](https://arxiv.org/abs/2402.09727)]
@@ -468,7 +318,7 @@
 
 #### 工具使用与注册
 
-> **关键数据：**Vercel 发现移除**80%工具**比任何模型升级都更有帮助；Schema First (Sigdel & Baral, 2026) —— 一项受控的初步研究表明，基于 schema 的工具契约可以减少**接口层面**的误用（如格式校验失败），但无法减少**语义层面**的误用（即格式正确但任务不当的调用），且各实验条件下端到端任务成功率均为零，表明仅靠接口设计不足以保证工具调用的可靠性；CodeAct 在**17/17项Mint基准**上表现优异，**回合数减少20%**。
+> **证据重点：**工具可靠性不只取决于工具数量。工具选择、类型契约、语义授权、结果校验和恢复策略会在执行循环中共同作用。
 
 - <u>CodeAct</u>: **"Executable Code Actions Elicit Better LLM Agents"**. *Wang et al.* ICML 2024. [[Paper](https://arxiv.org/abs/2402.01030)] [[Code](https://github.com/xingyaoww/code-act)]
 - <u>Schema First</u>†: **"Schema First Tool APIs for LLM Agents: A Controlled Study of Tool Misuse, Recovery, and Budgeted Performance"**. *Sigdel & Baral.* arXiv 2026. [[Paper](https://arxiv.org/abs/2603.13404)]
@@ -481,7 +331,7 @@
 
 #### 记忆架构
 
-> **关键数据：**Mem0 实现了相比完整上下文**90% token减少**；Zep 时序知识：**+18.5% QA准确率**；Agent Workflow Memory：在Mind2Web上**+14.9%**。六种架构模式：平面缓冲区→层次化→情节式→语义式→过程式→图式。
+> **证据重点：**记忆系统需要在检索质量、写入策略、时间一致性、来源、延迟与成本之间取舍。没有一种 substrate 能在所有任务类型和交互时域中稳定占优。
 
 - <u>Agent Workflow Memory (AWM)</u>†: **"Agent Workflow Memory"**. *Wang et al.* arXiv 2024. [[Paper](https://arxiv.org/abs/2409.07429)]
 - <u>Mem0</u>†: **"Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory"**. *Khant et al.* arXiv 2025. [[Paper](https://arxiv.org/abs/2504.19413)]
@@ -513,10 +363,10 @@
 
 #### 多智能体协同
 
-> **关键数据：**AgencyBench——智能体在原生SDKAgent Harness上达到**48.4%成功率**，而在独立Agent Harness上显著更低，展示了Harness和Agent之间的紧密耦合。对抗性多智能体设置中的拜占庭容错仍是开放问题。
+> **证据重点：**[AgencyBench](https://arxiv.org/abs/2601.11044) 报告闭源模型整体表现为 48.4%，开源模型为 32.1%，并另行观察到部分专有系统的原生生态优势。48.4% 不是原生 SDK 的成功率。
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Gloriaameng/LLM-Agent-Harness-Survey/main/assets/multi_agent_topology.png" width="680" alt="多智能体协同拓扑"/>
+  <img src="assets/multi_agent_topology.png" width="680" alt="多智能体协同拓扑"/>
 </p>
 
 - <u>AdaptOrch</u>†: **"AdaptOrch: Task-Adaptive Multi-Agent Orchestration in the Era of LLM Performance Convergence"**. *Yu.* arXiv 2026. [[Paper](https://arxiv.org/abs/2602.16873)]
@@ -528,10 +378,12 @@
 - <u>Mixture-of-Agents</u>†: **"Mixture-of-Agents Enhances Large Language Model Capabilities"**. *Wang et al.* arXiv 2024. [[Paper](https://arxiv.org/abs/2406.04692)]
 - <u>Multi-Agent Survey</u>: **"Large Language Model Based Multi-Agents: A Survey of Progress and Challenges"**. *Guo et al.* IJCAI 2024. [[Paper](https://arxiv.org/abs/2402.01680)]
 - <u>Concordia</u>†: **"Generative Agent-Based Modeling with Actions Grounded in Physical, Social, or Digital Space Using Concordia"**. *Vezhnevets et al.* arXiv 2023. [[Paper](https://arxiv.org/abs/2312.03664)]
+- <u>PEvo</u>: **"Implicit Behavioral Alignment of Language Agents in High-Stakes Crowd Simulations"**. *Wang et al.* EMNLP 2025. [[论文](https://arxiv.org/abs/2509.16457)]
+- <u>Agon</u>†: **"Agon: An Autonomous Large-Scale Omnidisciplinary Research System Built on Prompt Economy"**. *Sun et al.* arXiv 2026. [[论文](https://arxiv.org/abs/2606.24177)] [[代码](https://github.com/AutoResearch-Factory/Agon)]
 
 #### 计算经济学
 
-> **关键数据：**OpenRouter 报告**每周13T tokens**（2026年2月），每4周翻倍；AgencyBench 测量平均**1M tokens/任务**；预计2027年智能体计算量增长1000倍；AIOS 通过恰当的智能体调度实现**2.1×吞吐加速**。
+> **证据重点：**Harness economics 应同时报告 token、wall-clock time、工具与环境成本、并发、重试、失败工作和结果质量。只报告吞吐量无法描述长时 agent task 的真实成本。
 
 - <u>State of AI Report</u>: **"State of AI: An Empirical 100 Trillion Token Study with OpenRouter"**. *Aubakirova et al.* Andreessen Horowitz (a16z) and OpenRouter Inc., December 2025. [[报告](https://openrouter.ai/state-of-ai)]
 - <u>BentoML Inference Report</u>: **"Beyond Tokens-per-Second: How to Balance Speed, Cost, and Quality in LLM Inference"**. *Yang.* BentoML Blog, January 2026. [[博客](https://www.bentoml.com/blog/beyond-tokens-per-second-how-to-balance-speed-cost-and-quality-in-llm-inference)]
@@ -560,8 +412,9 @@
 - <u>Rise of LLM Agents</u>: **"The Rise and Potential of Large Language Model Based Agents: A Survey"**. *Xi et al.* arXiv 2023. [[Paper](https://arxiv.org/abs/2309.07864)]
 - <u>LLM Survey</u>: **"A Survey of Large Language Models"**. *Zhao et al.* arXiv 2023. [[Paper](https://arxiv.org/abs/2303.18223)]
 - <u>AI Agent Systems</u>†: **"AI Agent Systems: Architectures, Applications, and Evaluation"**. *Xu.* arXiv 2025. [[Paper](https://arxiv.org/abs/2601.01743)]
+- <u>AutoResearch Survey</u>†: **"What's Missing in Autonomous Research? A Systematization of Systems, Benchmarks, and Verification"**. *Ren et al.* 2026. [[论文](https://www.researchgate.net/publication/406952713)]
 - <u>LLM Agents: A Survey</u>†: **"LLM Agents: A Survey"**. *Lee.* Preprints.org 2026. [[Paper](https://www.preprints.org/manuscript/202608.0265/v1)]
-- <u>The Agent Loop</u>†: **"The Agent Loop: A Survey of Control Strategies, Skills, and Harnesses for LLM Agents"**. *Lee and Park.* SSRN 2026. [[Paper](https://ssrn.com/abstract=7186738)]
+- <u>The Agent Loop</u>†: **"The Agent Loop: A Survey of Control Strategies, Skills, and Harnesses for LLM Agents"**. *Lee and Park.* SSRN 2026. [[Paper](https://github.com/js-lee-AI/awesome-agent-loop-papers/blob/main/paper/the-agent-loop-survey.pdf)]
 
 #### 业界实践报告与洞察
 
@@ -608,10 +461,9 @@
 
 | 版本 | 日期 | 变更 |
 |------|------|------|
-|  v1 | 2026-04-03 | 首次预印本 |
-|  v2 | 2026-04-07 | 仓库更新 |
-|  v3 | 2026-04-09 | 预印本索引 |
-|  v4 | 2026-04-14 | 引用更新 |
+| Resource 2026.10 | 2026-10-13 | 重建系统矩阵与 benchmark 图谱，修正链接和定量表述 |
+| Paper v4 | 2026-04-14 | 仓库 PDF；论文修订时间早于 2026.10 资源索引 |
+| 已归档预印本 v3 | 2026-04-09 | DOI 对应的公开预印本 |
 
 ---
 
