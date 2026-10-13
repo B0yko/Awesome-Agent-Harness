@@ -7,7 +7,7 @@
 ### Official paper repository and living evidence index
 
 [![GitHub Stars](https://img.shields.io/github/stars/Gloriaameng/Awesome-Agent-Harness?style=social)](https://github.com/Gloriaameng/Awesome-Agent-Harness)
-[![References](https://img.shields.io/badge/References-162-2b8a3e)](#5-research-library)
+[![References](https://img.shields.io/badge/References-168-2b8a3e)](#5-research-library)
 [![License](https://img.shields.io/badge/License-CC--BY--4.0-blue.svg)](license)
 
 </div>
@@ -52,7 +52,7 @@ Most agent reports foreground the model and task score while leaving the runtime
 1. **A joint unit of analysis.** Agent behavior is studied at the **model–harness–environment** level, so results can be attributed to the configuration that produced them.
 2. **A shared architectural lens.** **ETCSLV** organizes recurring harness functions into execution, tools, context, state, lifecycle, and evaluation.
 3. **A historical account.** The survey connects software test harnesses, reinforcement-learning environments, early LLM-agent frameworks, and today's persistent agent runtimes.
-4. **A comparable system landscape.** Twenty-eight systems are assessed with the same evidence-coded component matrix, including coding, application-runtime, workplace, personal-agent, OS, and meta-harness routes. The set remains open as public evidence improves; Claude Code, Codex, DeepSeek Harness, and OpenClaw receive equal-depth treatment as anchor cases.
+4. **A comparable system landscape.** Thirty-four systems are assessed with the same evidence-coded component matrix, including coding, application-runtime, workplace, personal-agent, OS, and meta-harness routes. The set remains open as public evidence improves; Claude Code, Codex, DeepSeek Harness, and OpenClaw receive equal-depth treatment as anchor cases.
 5. **An evaluation map.** Harness-effect benchmarks, lifecycle and security tests, long-horizon recovery, protocol benchmarks, evaluation infrastructure, and task environments are separated by what they actually vary.
 6. **A research agenda for evolving runtimes.** The survey connects context, memory, tools, security, observability, and cost to harness evolution and bounded runtime self-improvement.
 
@@ -71,9 +71,9 @@ The README follows the survey's argument rather than presenting a detached softw
 |---|---|---|
 | What is the harness layer? | [1. Conceptual Framework](#1-conceptual-framework) | Model–harness–environment boundary and ETCSLV |
 | Where did this architecture come from? | [2. Historical Evolution](#2-historical-evolution) | Test harness, RL environment, LLM-agent, and runtime lineages |
-| Which systems implement it? | [3. System Landscape](#3-system-landscape) | Four anchor cases, an open 28-system evidence matrix, and a categorized directory |
+| Which systems implement it? | [3. System Landscape](#3-system-landscape) | Four anchor cases, an open 34-system evidence matrix, and a categorized directory |
 | How should it be evaluated? | [4. Evaluation Landscape](#4-evaluation-landscape) | 30 direct harness benchmarks, evaluation infrastructure, and task environments |
-| What evidence supports each engineering problem? | [5. Research Library](#5-research-library) | 162 papers, specifications, architecture notes, and reports organized by engineering problem |
+| What evidence supports each engineering problem? | [5. Research Library](#5-research-library) | 168 papers, specifications, architecture notes, and reports organized by engineering problem |
 | How were entries selected and how does this relate to the paper? | [About the Survey](#about-the-survey) | Evidence rules, versions, citation, and contribution guide |
 
 ---
@@ -116,13 +116,13 @@ We analyze a harness as **H = (E, T, C, S, L, V)**: six governance functions tha
 | 2024 | Model Context Protocol | Standardized a growing part of the tool-to-harness boundary |
 | 2025 | HAL, AIOS, LangGraph, A2A | Advanced evaluation infrastructure, agent OS design, durable graphs, and agent interoperability |
 | 2025 | MemoryOS, AgentBound† | Developed memory abstractions and runtime enforcement |
-| 2026 | Antigravity, WorkBuddy, Muse, Harness-Bench, HarnessX, LongHorizon-Harness, HarnessAudit-Bench, SCLATE | Expanded harnesses across coding, workplace, and personal agents while making harness choice, evolution, long-horizon operation, lifecycle risk, and auditability direct objects of study |
+| 2026 | Antigravity, workplace and personal agents, Harness-Bench, HarnessX, LongHorizon-Harness, HarnessAudit-Bench, SCLATE | Expanded harnesses across coding, workplace, and personal agents while making harness choice, evolution, long-horizon operation, lifecycle risk, and auditability direct objects of study |
 
 ---
 
 ## 3. System Landscape
 
-The system landscape moves from depth to breadth: four anchor cases expose the runtime in detail, the evidence matrix applies one comparison scheme, and the directory preserves the wider ecosystem of systems, substrates, modules, and evaluation infrastructure. The comparison set is evidence-driven and open-ended; 28 is the current result of the inclusion rule, not a target or a claim of completeness. Product form is not an exclusion rule: workplace and personal agents belong when their runtime architecture is documented well enough to assess.
+The system landscape moves from depth to breadth: four anchor cases expose the runtime in detail, the evidence matrix applies one comparison scheme, and the directory preserves the wider ecosystem of systems, substrates, modules, and evaluation infrastructure. The comparison set is evidence-driven and open-ended; 34 is the current result of the inclusion rule, not a target or a claim of completeness. Product form is not an exclusion rule: workplace and personal agents belong when their runtime architecture is documented well enough to assess.
 
 ### Four Anchor Systems
 
@@ -167,12 +167,18 @@ Ratings describe documented component coverage at the evidence cutoff. Quality, 
 | Persistent, meta, and operational harnesses | **LongHorizon-Harness** | ● | ◐ | ● | ● | ● | ● |
 | Persistent, meta, and operational harnesses | **Hermes Agent** | ● | ● | ● | ● | ● | ● |
 | Persistent, meta, and operational harnesses | **SandBase** | ● | ● | ◐ | ● | ● | ● |
-| Workplace and personal-agent harnesses | **WorkBuddy** | ● | ● | ● | ● | ● | ◐ |
-| Workplace and personal-agent harnesses | **Muse** | ● | ● | ● | ● | ● | ● |
+| Workplace and personal-agent harnesses | **WorkBuddy** | ● | ● | ● | ● | ● | ● |
+| Workplace and personal-agent harnesses | **Muse** | ● | ● | ● | ● | ● | ◐ |
+| Workplace and personal-agent harnesses | **Amazon Quick** | ● | ● | ● | ● | ● | ● |
+| Workplace and personal-agent harnesses | **OpenAI Workspace Agents** | ● | ● | ● | ● | ● | ◐ |
+| Workplace and personal-agent harnesses | **QwenWork** | ● | ● | ● | ● | ● | ? |
+| Workplace and personal-agent harnesses | **OpenAI dots** | ● | ● | ● | ● | ● | ◐ |
+| Workplace and personal-agent harnesses | **Grok Bot** | ● | ● | ● | ● | ● | ? |
+| Workplace and personal-agent harnesses | **OpenJarvis** | ● | ● | ● | ● | ● | ● |
 
 ### System Directory
 
-The matrix includes every current system for which first-party material is sufficient to rate the six components at a useful level. It is neither a top-28 list nor a maturity ranking. Systems with a different analysis unit, incomplete evidence, or a narrower capability remain visible in the categorized directory below.
+The matrix includes every current system for which first-party material is sufficient to rate the six components at a useful level. It is neither a top-34 list nor a maturity ranking. Systems with a different analysis unit, incomplete evidence, or a narrower capability remain visible in the categorized directory below.
 
 #### Compared coding harnesses
 
@@ -209,8 +215,25 @@ The four featured systems above are joined by ten coding harnesses in the compar
 
 #### Workplace and personal-agent harnesses
 
-- **[WorkBuddy](https://www.workbuddy.ai/)** — Tencent Cloud's office harness plans and executes cross-tool work across messaging, documents, mail, meetings, and knowledge bases. Its [open platform](https://open.workbuddy.cn/en/docs/buddy-app) exposes skills, MCP/OAuth connectors, experts, multi-agent collaboration, context compression, memory, tool orchestration, and permission control.
+- **[WorkBuddy](https://www.workbuddy.ai/)** — Tencent Cloud's office harness plans and executes cross-tool work across messaging, documents, mail, meetings, and knowledge bases. Its [open platform](https://open.workbuddy.cn/en/docs/buddy-app) and [managed-agent runtime](https://cloud.tencent.com/document/product/1831/138968) expose skills, MCP/OAuth/A2A, multi-agent orchestration, context compression, memory, isolated execution, recovery, traces, evaluation, and lifecycle governance.
 - **[Muse](https://muse.ai/)** — Meta's personal-agent harness runs each agent in a persistent isolated VM with a browser, filesystem, terminal, memory, connected apps, self-built tools, scheduled and event-driven work, action approvals, credential isolation, and a complete activity trail. [Design account](https://introducing.muse.ai/) · [Launch and security architecture](https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent)
+- **[Amazon Quick](https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-quick/)** — A workplace harness combining autonomous background agents, reusable flows, enterprise data spaces, granular autonomy, identity propagation, approvals, monitoring, and [test runs with logs and watch variables](https://docs.aws.amazon.com/quick/latest/userguide/automate-custom-agents.html).
+- **[OpenAI Workspace Agents](https://openai.com/index/introducing-workspace-agents-in-chatgpt/)** — Codex-powered organizational agents with shared skills, files, apps and MCP, cloud execution, schedules and Slack triggers, approval handoffs, role-based publishing, version history, analytics, and Compliance API visibility.
+- **[QwenWork](https://www.alibabacloud.com/help/en/qwenwork/qwenwork-intro)** — A personal and organizational work platform with explicit Agent sessions, plans and intermediate results, files, skills, connectors, scheduled tasks, computer use, workspace isolation, and sensitive-action confirmation; a public general evaluator remains unverified.
+- **[OpenAI dots](https://openai.com/index/introducing-dots/)** — Always-on personal agents with a dedicated cloud computer and browser, plugins, persistent memory and notes, scheduled and proactive work, local and Codex-cloud actions, custom rules, auto-review, and approvals.
+- **[Grok Bot](https://x.ai/news/introducing-grok-bot)** — A persistent cloud-computer agent with browser, terminal, apps, parallel bots, bot-to-bot coordination, chief-of-staff hierarchies, and demonstration-to-routine learning; [enterprise controls](https://x.ai/news/grok-bot-for-enterprise) add isolation, access, network, and audit governance.
+- **[OpenJarvis](https://github.com/open-jarvis/OpenJarvis)** — A local-first, on-device personal-agent stack with typed runtime primitives, multiple agent loops, tools and MCP, sandboxing, several memory backends, scheduled operatives, full traces, trace-driven routing, and joint accuracy, latency, energy, and cost evaluation. [Paper](https://arxiv.org/abs/2605.17172)
+
+#### Workplace and personal-agent watchlist
+
+These systems remain in the index while their public architecture, maturity, or independent analysis unit is still emerging.
+
+- **[Microsoft Copilot Autopilot](https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/)** — A preview workplace agent with its own identity, memory, computer, workspace, and enterprise governance; public tool and evaluation documentation is still limited.
+- **[Google Workspace Studio](https://workspace.google.com/blog/product-announcements/introducing-google-workspace-studio-agents-for-everyday-work)** — An agentic workplace flow builder with a 2026 [least-privilege, HITL, DLP, drift-detection, and audit update](https://workspace.google.com/blog/identity-and-security/defend-against-agentic-risks-with-multi-layered-protections-in-google-workspace-studio).
+- **[Claude Tag](https://www.anthropic.com/news/introducing-claude-tag)** — A shared, persistent workplace interaction built from Claude Code and Cowork concepts; treated as a product surface of that lineage until a distinct runtime boundary is documented.
+- **[Claude Managed Agents](https://www.anthropic.com/news/finance-agents)** — Long-running enterprise sessions with per-tool permissions, credential vaulting, and audit logs; retained as a workplace deployment case related to the Claude runtime lineage.
+- **[nanoMuse](https://github.com/nano-muse/nanoMuse)** — A new open personal agent spanning phones and desktops with scheduled goals, editable memory, and risk gates; parts of the system build on DeepSeek Harness and OpenMinis. [Paper](https://arxiv.org/abs/2610.08699)
+- **[Qwen Book](https://www.alibabacloud.com/blog/603599)** — An early “OS as harness” workplace device combining model, operating system, apps, cloud, context, memory, execution, and governance; detailed component evidence is still limited.
 
 #### Extended catalog
 
@@ -577,6 +600,12 @@ The hardest harness problems appear where execution, context, state, permissions
 - <u>SandBase Runtime</u>: **"SandBase Harness"**. *SandBase.* 2026. [[Repository](https://github.com/sandbaseai/sandbase-harness)]
 - <u>WorkBuddy Open Platform</u>: **"Buddy App: An AI Harness for a Vertical Industry"**. *Tencent Cloud.* 2026. [[Documentation](https://open.workbuddy.cn/en/docs/buddy-app)]
 - <u>Muse Design and Runtime</u>: **"How We Designed Muse"**. *Meta.* September 2026. [[Article](https://introducing.muse.ai/)] [[Architecture](https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent)]
+- <u>Amazon Quick Autonomous Agents</u>: **"Amazon Quick Announces Autonomous Agents"**. *AWS.* June 2026. [[Announcement](https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-quick/)] [[Documentation](https://docs.aws.amazon.com/quick/latest/userguide/automate-custom-agents.html)]
+- <u>OpenAI Workspace Agents</u>: **"Introducing Workspace Agents in ChatGPT"**. *OpenAI.* April 2026. [[Article](https://openai.com/index/introducing-workspace-agents-in-chatgpt/)]
+- <u>QwenWork Runtime</u>: **"QwenWork International Edition: Product Guide"**. *Alibaba Cloud.* August 2026. [[Documentation](https://www.alibabacloud.com/help/en/qwenwork/qwenwork-intro)]
+- <u>OpenAI dots</u>: **"Introducing dots"**. *OpenAI.* September 2026. [[Article](https://openai.com/index/introducing-dots/)]
+- <u>Grok Bot</u>: **"Introducing Grok Bot"**. *xAI.* August 2026. [[Article](https://x.ai/news/introducing-grok-bot)] [[Enterprise](https://x.ai/news/grok-bot-for-enterprise)]
+- <u>OpenJarvis</u>†: **"OpenJarvis: Personal AI, on Personal Devices"**. *OpenJarvis Team.* arXiv 2026. [[Paper](https://arxiv.org/abs/2605.17172)] [[Code](https://github.com/open-jarvis/OpenJarvis)]
 
 ---
 
@@ -641,7 +670,7 @@ Corrections and suggestions: gloriamenng@gmail.com · wangyanan@mail.dlut.edu.cn
 
 | Track | Version | Date | Changes |
 |---|---|---|---|
-| Resource index | **2026.10** | 2026-10-13 | Restored the paper title, citation, and survey narrative; reduced the header to stars, total references, and license; expanded the open evidence matrix from 20 to 28 systems, including workplace and personal-agent routes; added April–October systems, benchmarks, architecture reports, and a categorized full directory |
+| Resource index | **2026.10** | 2026-10-13 | Restored the paper title, citation, and survey narrative; reduced the header to stars, total references, and license; expanded the open evidence matrix from 20 to 34 systems, including eight workplace and personal-agent routes; added April–October systems, benchmarks, architecture reports, and a categorized full directory |
 | Paper | **v4** | 2026-04-14 | Current repository PDF; predates the 2026.10 resource index |
 | Archived preprint | **v3** | 2026-04-09 | DOI-linked public preprint |
 

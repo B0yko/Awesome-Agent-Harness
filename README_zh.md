@@ -7,7 +7,7 @@
 ### 论文官方仓库与持续更新的证据索引
 
 [![GitHub Stars](https://img.shields.io/github/stars/Gloriaameng/Awesome-Agent-Harness?style=social)](https://github.com/Gloriaameng/Awesome-Agent-Harness)
-[![References](https://img.shields.io/badge/References-162-2b8a3e)](#5-研究资料库)
+[![References](https://img.shields.io/badge/References-168-2b8a3e)](#5-研究资料库)
 [![License](https://img.shields.io/badge/License-CC--BY--4.0-blue.svg)](license)
 
 </div>
@@ -52,7 +52,7 @@
 1. **提出联合分析单元。** 在 **model–harness–environment** 层面研究 Agent 行为，让结果能够回到产生它的完整 configuration。
 2. **建立统一架构视角。** **ETCSLV** 将反复出现的 harness 功能整理为 execution、tool、context、state、lifecycle 与 evaluation。
 3. **梳理历史来源。** 把软件 test harness、强化学习 environment、早期 LLM Agent framework 与今天的持久 Agent runtime 连到同一条演进线上。
-4. **建立可比较的系统版图。** 用同一套证据编码矩阵分析 28 个系统，覆盖 coding、application runtime、办公、personal agent、OS 与 meta-harness 路线；比较集会随公开证据继续扩展，Claude Code、Codex、DeepSeek Harness 与 OpenClaw 作为等深度重点案例展开。
+4. **建立可比较的系统版图。** 用同一套证据编码矩阵分析 34 个系统，覆盖 coding、application runtime、办公、personal agent、OS 与 meta-harness 路线；比较集会随公开证据继续扩展，Claude Code、Codex、DeepSeek Harness 与 OpenClaw 作为等深度重点案例展开。
 5. **重组评测版图。** 按真正改变的变量区分 harness-effect benchmark、lifecycle 与 security test、long-horizon recovery、protocol benchmark、evaluation infrastructure 和 task environment。
 6. **提出面向演化 runtime 的研究议程。** 将 context、memory、tool、security、observability 与 cost 连接到 harness evolution 和有边界的 runtime self-improvement。
 
@@ -71,9 +71,9 @@ README 沿用论文的论证顺序，而不是把项目堆成一份与综述脱�
 |---|---|---|
 | Harness layer 到底是什么？ | [1. 概念框架](#1-概念框架) | Model–harness–environment 边界与 ETCSLV |
 | 这种架构从哪里演变而来？ | [2. 历史演进](#2-历史演进) | Test harness、RL environment、LLM Agent 与 runtime 的历史来源 |
-| 哪些系统实现了它？ | [3. 系统版图](#3-系统版图) | 四个重点案例、开放的 28 系统证据矩阵与分类目录 |
+| 哪些系统实现了它？ | [3. 系统版图](#3-系统版图) | 四个重点案例、开放的 34 系统证据矩阵与分类目录 |
 | 应该如何评测？ | [4. 评测版图](#4-评测版图) | 30 个直接 harness benchmark、评测基础设施与任务环境 |
-| 每类工程问题有哪些证据？ | [5. 研究资料库](#5-研究资料库) | 按工程问题组织的 162 篇论文、规范、架构说明与报告 |
+| 每类工程问题有哪些证据？ | [5. 研究资料库](#5-研究资料库) | 按工程问题组织的 168 篇论文、规范、架构说明与报告 |
 | 如何收录，和论文版本是什么关系？ | [关于这篇综述](#关于这篇综述) | 证据规则、版本、引用与贡献指南 |
 
 ---
@@ -116,13 +116,13 @@ README 沿用论文的论证顺序，而不是把项目堆成一份与综述脱�
 | 2024 | Model Context Protocol | 标准化不断扩大的 tool-to-harness 边界 |
 | 2025 | HAL、AIOS、LangGraph、A2A | 推进 evaluation infrastructure、Agent OS、durable graph 与 Agent interoperability |
 | 2025 | MemoryOS、AgentBound† | 发展 memory abstraction 与 runtime enforcement |
-| 2026 | Antigravity、WorkBuddy、Muse、Harness-Bench、HarnessX、LongHorizon-Harness、HarnessAudit-Bench、SCLATE | Harness 扩展到 coding、办公与 personal agent，同时让 harness 选择、演化、长时运行、生命周期风险与可审计性成为直接研究对象 |
+| 2026 | Antigravity、办公与 personal agent、Harness-Bench、HarnessX、LongHorizon-Harness、HarnessAudit-Bench、SCLATE | Harness 扩展到 coding、办公与 personal agent，同时让 harness 选择、演化、长时运行、生命周期风险与可审计性成为直接研究对象 |
 
 ---
 
 ## 3. 系统版图
 
-系统版图从深度走向广度：四个重点案例详细暴露 runtime，证据矩阵使用统一口径比较，目录继续保留更广的系统、substrate、能力模块与评测基础设施。比较集由证据门槛决定并持续开放；28 是当前应用收录规则的结果，不是预设目标，也不代表已经穷尽所有系统。产品形态不是排除条件：办公与 personal agent 只要有足够公开架构证据，同样属于 harness 研究对象。
+系统版图从深度走向广度：四个重点案例详细暴露 runtime，证据矩阵使用统一口径比较，目录继续保留更广的系统、substrate、能力模块与评测基础设施。比较集由证据门槛决定并持续开放；34 是当前应用收录规则的结果，不是预设目标，也不代表已经穷尽所有系统。产品形态不是排除条件：办公与 personal agent 只要有足够公开架构证据，同样属于 harness 研究对象。
 
 ### 四个重点系统
 
@@ -167,12 +167,18 @@ README 沿用论文的论证顺序，而不是把项目堆成一份与综述脱�
 | 持久、meta 与 operational harness | **LongHorizon-Harness** | ● | ◐ | ● | ● | ● | ● |
 | 持久、meta 与 operational harness | **Hermes Agent** | ● | ● | ● | ● | ● | ● |
 | 持久、meta 与 operational harness | **SandBase** | ● | ● | ◐ | ● | ● | ● |
-| 办公与 personal-agent harness | **WorkBuddy** | ● | ● | ● | ● | ● | ◐ |
-| 办公与 personal-agent harness | **Muse** | ● | ● | ● | ● | ● | ● |
+| 办公与 personal-agent harness | **WorkBuddy** | ● | ● | ● | ● | ● | ● |
+| 办公与 personal-agent harness | **Muse** | ● | ● | ● | ● | ● | ◐ |
+| 办公与 personal-agent harness | **Amazon Quick** | ● | ● | ● | ● | ● | ● |
+| 办公与 personal-agent harness | **OpenAI Workspace Agents** | ● | ● | ● | ● | ● | ◐ |
+| 办公与 personal-agent harness | **QwenWork** | ● | ● | ● | ● | ● | ? |
+| 办公与 personal-agent harness | **OpenAI dots** | ● | ● | ● | ● | ● | ◐ |
+| 办公与 personal-agent harness | **Grok Bot** | ● | ● | ● | ● | ● | ? |
+| 办公与 personal-agent harness | **OpenJarvis** | ● | ● | ● | ● | ● | ● |
 
 ### 系统目录
 
-矩阵收录所有目前能够由一方公开材料对六项组件做出有用判断的系统。它不是“Top 28”，也不是成熟度排名。分析单位不同、证据尚不完整或只聚焦单项能力的项目仍保留在下面的分类目录中。
+矩阵收录所有目前能够由一方公开材料对六项组件做出有用判断的系统。它不是“Top 34”，也不是成熟度排名。分析单位不同、证据尚不完整或只聚焦单项能力的项目仍保留在下面的分类目录中。
 
 #### 进入比较矩阵的 Coding Harness
 
@@ -209,8 +215,25 @@ README 沿用论文的论证顺序，而不是把项目堆成一份与综述脱�
 
 #### 办公与 Personal-Agent Harness
 
-- **[WorkBuddy](https://www.workbuddy.ai/)** — 腾讯云面向办公工作的 harness，可跨 IM、文档、邮件、会议与知识库规划并执行任务；其[开放平台](https://open.workbuddy.cn/en/docs/buddy-app)进一步公开 skill、MCP/OAuth connector、expert、multi-agent collaboration、context compression、memory、tool orchestration 与 permission control。
+- **[WorkBuddy](https://www.workbuddy.ai/)** — 腾讯云面向办公工作的 harness，可跨 IM、文档、邮件、会议与知识库规划并执行任务；其[开放平台](https://open.workbuddy.cn/en/docs/buddy-app)与[托管 Agent runtime](https://cloud.tencent.com/document/product/1831/138968)进一步公开 skill、MCP/OAuth/A2A、multi-agent orchestration、context compression、memory、隔离执行、恢复、trace、evaluation 与 lifecycle governance。
 - **[Muse](https://muse.ai/)** — Meta 的 personal-agent harness；每位用户的 Agent 运行在持久隔离 VM 中，具有 browser、filesystem、terminal、memory、connected app、自建工具、定时和事件驱动工作、action approval、credential isolation 与完整 activity trail。[设计说明](https://introducing.muse.ai/) · [发布与安全架构](https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent)
+- **[Amazon Quick](https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-quick/)** — 办公 harness，组合 autonomous background agent、可复用 flow、企业 data space、细粒度 autonomy、identity propagation、approval、monitoring，以及[带 log 和 watch variable 的 test run](https://docs.aws.amazon.com/quick/latest/userguide/automate-custom-agents.html)。
+- **[OpenAI Workspace Agents](https://openai.com/index/introducing-workspace-agents-in-chatgpt/)** — Codex-powered 组织级 Agent，提供共享 skill、file、app 与 MCP、cloud execution、schedule/Slack trigger、approval handoff、role-based publishing、version history、analytics 与 Compliance API visibility。
+- **[QwenWork](https://www.alibabacloud.com/help/en/qwenwork/qwenwork-intro)** — 面向个人和组织的工作平台，提供显式 Agent session、plan 与 intermediate result、file、skill、connector、scheduled task、computer use、workspace isolation 与敏感操作确认；公开的通用 evaluator 仍未核验。
+- **[OpenAI dots](https://openai.com/index/introducing-dots/)** — always-on personal agent，具有独立 cloud computer/browser、plugin、持久 memory/note、scheduled/proactive work、本地与 Codex cloud action、custom rule、auto-review 和 approval。
+- **[Grok Bot](https://x.ai/news/introducing-grok-bot)** — 运行在持久 cloud computer 上的 Agent，提供 browser、terminal、app、并行 bot、bot-to-bot coordination、chief-of-staff hierarchy 与 demonstration-to-routine；[企业版控制](https://x.ai/news/grok-bot-for-enterprise)补充 isolation、access、network 与 audit governance。
+- **[OpenJarvis](https://github.com/open-jarvis/OpenJarvis)** — local-first、on-device personal-agent stack，具有 typed runtime primitive、多种 agent loop、tool/MCP、sandbox、多种 memory backend、scheduled operative、完整 trace、trace-driven routing，以及 accuracy、latency、energy、cost 联合评测。[论文](https://arxiv.org/abs/2605.17172)
+
+#### 办公与 Personal-Agent 观察名单
+
+这些系统继续收录，但公开架构、成熟度或独立分析单位仍在形成中。
+
+- **[Microsoft Copilot Autopilot](https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/)** — 处于 preview 的办公 Agent，具有独立 identity、memory、computer、workspace 与企业治理；公开 tool 与 evaluation 文档仍有限。
+- **[Google Workspace Studio](https://workspace.google.com/blog/product-announcements/introducing-google-workspace-studio-agents-for-everyday-work)** — agentic workplace flow builder；2026 年更新了[最小权限、HITL、DLP、drift detection 与 audit](https://workspace.google.com/blog/identity-and-security/defend-against-agentic-risks-with-multi-layered-protections-in-google-workspace-studio)。
+- **[Claude Tag](https://www.anthropic.com/news/introducing-claude-tag)** — 由 Claude Code 与 Cowork 思路演化出的共享、持久办公交互；在独立 runtime 边界公开前，作为该 lineage 的产品形态收录。
+- **[Claude Managed Agents](https://www.anthropic.com/news/finance-agents)** — 提供 long-running session、per-tool permission、credential vault 与 audit log；作为 Claude runtime lineage 的 workplace deployment case 收录。
+- **[nanoMuse](https://github.com/nano-muse/nanoMuse)** — 跨手机和桌面的新开源 personal agent，提供 scheduled goal、editable memory 与 risk gate；系统部分基于 DeepSeek Harness 和 OpenMinis。[论文](https://arxiv.org/abs/2610.08699)
+- **[Qwen Book](https://www.alibabacloud.com/blog/603599)** — 早期“OS as harness”办公设备，组合 model、OS、app、cloud、context、memory、execution 与 governance；组件级公开证据仍有限。
 
 #### 扩展目录
 
@@ -577,6 +600,12 @@ Agent Harness 的难点不只存在于单个组件，而在执行、上下文、
 - <u>SandBase Runtime</u>: **"SandBase Harness"**. *SandBase.* 2026。[[仓库](https://github.com/sandbaseai/sandbase-harness)]
 - <u>WorkBuddy Open Platform</u>: **"Buddy App: An AI Harness for a Vertical Industry"**. *Tencent Cloud.* 2026。[[文档](https://open.workbuddy.cn/en/docs/buddy-app)]
 - <u>Muse Design and Runtime</u>: **"How We Designed Muse"**. *Meta.* 2026 年 9 月。[[文章](https://introducing.muse.ai/)] [[架构](https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent)]
+- <u>Amazon Quick Autonomous Agents</u>: **"Amazon Quick Announces Autonomous Agents"**. *AWS.* 2026 年 6 月。[[公告](https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-quick/)] [[文档](https://docs.aws.amazon.com/quick/latest/userguide/automate-custom-agents.html)]
+- <u>OpenAI Workspace Agents</u>: **"Introducing Workspace Agents in ChatGPT"**. *OpenAI.* 2026 年 4 月。[[文章](https://openai.com/index/introducing-workspace-agents-in-chatgpt/)]
+- <u>QwenWork Runtime</u>: **"QwenWork International Edition: Product Guide"**. *Alibaba Cloud.* 2026 年 8 月。[[文档](https://www.alibabacloud.com/help/en/qwenwork/qwenwork-intro)]
+- <u>OpenAI dots</u>: **"Introducing dots"**. *OpenAI.* 2026 年 9 月。[[文章](https://openai.com/index/introducing-dots/)]
+- <u>Grok Bot</u>: **"Introducing Grok Bot"**. *xAI.* 2026 年 8 月。[[文章](https://x.ai/news/introducing-grok-bot)] [[企业版](https://x.ai/news/grok-bot-for-enterprise)]
+- <u>OpenJarvis</u>†: **"OpenJarvis: Personal AI, on Personal Devices"**. *OpenJarvis Team.* arXiv 2026. [[论文](https://arxiv.org/abs/2605.17172)] [[代码](https://github.com/open-jarvis/OpenJarvis)]
 
 ---
 
@@ -641,7 +670,7 @@ Agent Harness 的难点不只存在于单个组件，而在执行、上下文、
 
 | 更新轨道 | 版本 | 日期 | 变更 |
 |---|---|---|---|
-| 资源索引 | **2026.10** | 2026-10-13 | 恢复论文标题、引用与综述叙事；页首只保留 stars、总参考资料与 license；开放证据矩阵由 20 项扩为 28 项并补入办公与 personal-agent 路线；补入 4–10 月系统、benchmark、架构报告与完整分类目录 |
+| 资源索引 | **2026.10** | 2026-10-13 | 恢复论文标题、引用与综述叙事；页首只保留 stars、总参考资料与 license；开放证据矩阵由 20 项扩为 34 项并补入八条办公与 personal-agent 路线；补入 4–10 月系统、benchmark、架构报告与完整分类目录 |
 | 论文 | **v4** | 2026-04-14 | 当前仓库 PDF；早于 2026.10 资源索引 |
 | 已归档预印本 | **v3** | 2026-04-09 | DOI 对应的公开预印本 |
 
