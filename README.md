@@ -126,11 +126,11 @@ The core comparison set contains **20 systems** selected for architectural relev
 | Coding harnesses | **Cline** | ● | ● | ◐ | ● | ● | ◐ |
 | Coding harnesses | **OpenHands** | ● | ● | ● | ● | ● | ◐ |
 | Coding harnesses | **Deep Agents** | ● | ● | ● | ● | ● | ● |
-| Coding harnesses | **Prime Agent** | ● | ● | ● | ● | ● | ◐ |
+| Coding harnesses | **Prime Agent** | ● | ● | ● | ● | ◐ | ◐ |
 | General runtimes | **OpenAI Agents SDK** | ● | ● | ● | ● | ● | ● |
 | General runtimes | **Google ADK** | ● | ● | ● | ● | ● | ● |
 | General runtimes | **Microsoft Agent Framework** | ● | ● | ● | ● | ● | ● |
-| General runtimes | **LangGraph** | ● | ● | ● | ● | ◐ | ◐ |
+| General runtimes | **LangGraph** | ● | ◐ | ◐ | ● | ◐ | ◐ |
 | Other representative routes | **DeerFlow** | ● | ● | ● | ● | ● | ◐ |
 | Other representative routes | **AIOS** | ● | ● | ● | ● | ● | ◐ |
 | Other representative routes | **AOHP** | ● | ● | ● | ● | ● | ◐ |

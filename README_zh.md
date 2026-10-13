@@ -126,11 +126,11 @@ LLM agent 并不只依靠模型推理行动。执行 harness 负责组装观察�
 | Coding Harness | **Cline** | ● | ● | ◐ | ● | ● | ◐ |
 | Coding Harness | **OpenHands** | ● | ● | ● | ● | ● | ◐ |
 | Coding Harness | **Deep Agents** | ● | ● | ● | ● | ● | ● |
-| Coding Harness | **Prime Agent** | ● | ● | ● | ● | ● | ◐ |
+| Coding Harness | **Prime Agent** | ● | ● | ● | ● | ◐ | ◐ |
 | 通用 Runtime | **OpenAI Agents SDK** | ● | ● | ● | ● | ● | ● |
 | 通用 Runtime | **Google ADK** | ● | ● | ● | ● | ● | ● |
 | 通用 Runtime | **Microsoft Agent Framework** | ● | ● | ● | ● | ● | ● |
-| 通用 Runtime | **LangGraph** | ● | ● | ● | ● | ◐ | ◐ |
+| 通用 Runtime | **LangGraph** | ● | ◐ | ◐ | ● | ◐ | ◐ |
 | 其他代表路线 | **DeerFlow** | ● | ● | ● | ● | ● | ◐ |
 | 其他代表路线 | **AIOS** | ● | ● | ● | ● | ● | ◐ |
 | 其他代表路线 | **AOHP** | ● | ● | ● | ● | ● | ◐ |
