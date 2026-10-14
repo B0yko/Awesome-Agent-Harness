@@ -645,7 +645,7 @@ This is an **opinionated research index**. An entry belongs when it contributes 
 
 | Artifact | Current version | Date / cutoff | Status |
 |---|---|---|---|
-| Resource index | **2026.10** | Evidence reviewed through **2026-10-13** | This README; last updated **2026-10-13** |
+| Resource index | **2026.10** | Evidence reviewed through **2026-10-13** | This README; last updated **2026-10-14** |
 | Repository paper | **v4** | 2026-04-14 | [Public PDF](./Agent_Harness_for_LLM_Agents__A_Survey__v4.pdf) |
 | Archived preprint | **v3** | 2026-04-09 | [DOI record](https://doi.org/10.20944/preprints202604.0428.v3) |
 | Paper v5 | In revision | — | The manuscript, figures, and references are under review |
@@ -670,7 +670,7 @@ Corrections and suggestions: gloriamenng@gmail.com · wangyanan@mail.dlut.edu.cn
 
 | Track | Version | Date | Changes |
 |---|---|---|---|
-| Resource index | **2026.10** | 2026-10-13 | Restored the paper title, citation, and survey narrative; reduced the header to stars, total references, and license; expanded the open evidence matrix from 20 to 34 systems, including eight workplace and personal-agent routes; added April–October systems, benchmarks, architecture reports, and a categorized full directory |
+| Resource index | **2026.10** | 2026-10-14 | Restored the paper title, citation, and survey narrative; reduced the header to stars, total references, and license; expanded the open evidence matrix from 20 to 34 systems, including eight workplace and personal-agent routes; added April–October systems, benchmarks, architecture reports, and a categorized full directory; rewrote the Chinese README with standard terminology and natural formal prose |
 | Paper | **v4** | 2026-04-14 | Current repository PDF; predates the 2026.10 resource index |
 | Archived preprint | **v3** | 2026-04-09 | DOI-linked public preprint |
 
