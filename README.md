@@ -212,6 +212,7 @@ The four featured systems above are joined by ten coding harnesses in the compar
 - **[LongHorizon-Harness](https://github.com/AMAP-ML/LongHorizon-Harness)** — A meta-harness that wraps existing coding agents in plan–act–verify, durable state, role isolation, audit, checkpoint, and recovery loops. [Paper](https://arxiv.org/abs/2608.01964)
 - **[Hermes Agent](https://github.com/nousresearch/hermes-agent)** — A persistent personal-agent runtime with memory, agent-created skills, multi-channel gateways, several sandbox backends, subagents, approvals, checkpoints, context compression, trajectories, and batch evaluation. [Docs](https://hermes-agent.nousresearch.com/docs/)
 - **[SandBase](https://github.com/sandbaseai/sandbase-harness)** — A local-first operations and security control plane with resumable sessions, audit and replay, MCP toolsets, credential and approval policy, several sandbox backends, typed SDKs, and conformance tests.
+- **[CUGA](https://github.com/cuga-project/cuga-agent)** — IBM Research's open-source generalist agent harness on LangGraph that runs API (OpenAPI, MCP, LangChain tools), web, and hybrid tasks under configurable policies (intent guard, playbooks, tool approval), with skills, A2A sub-agents, and ACP. [Paper](https://arxiv.org/abs/2510.23856)
 
 #### Workplace and personal-agent harnesses
 
