@@ -351,6 +351,7 @@ These benchmarks ask **what tasks an agent can complete**. Harness studies use t
 - **[WebArena](https://github.com/web-arena-x/webarena)** — Realistic websites and end-to-end tasks for autonomous web agents.
 - **[GAIA](https://arxiv.org/abs/2311.12983)** — General-assistant questions that require reasoning, tools, and multiple modalities.
 - **[SWE-bench](https://github.com/swe-bench/SWE-bench)** — Real GitHub issues resolved against executable repositories.
+- **[EC²-Bench](https://github.com/OpenBMB/EC2-Bench)** — OpenClaw workspace tasks run by an edge model that can call a cloud model; compares who controls cloud invocation (external router vs. edge agent) on completion, cost, and privacy exposure. [Paper](https://arxiv.org/abs/2610.17816)
 
 ---
 
@@ -440,6 +441,7 @@ The hardest harness problems appear where execution, context, state, permissions
 - <u>WildClawBench</u>†: **"WildClawBench: A Benchmark for Real-World, Long-Horizon Agent Evaluation"**. *Ding et al.* arXiv 2026. [[Paper](https://arxiv.org/abs/2605.10912)]
 - <u>HarnessAudit-Bench</u>†: **"Auditing Agent Harness Safety"**. *Liu et al.* arXiv 2026. [[Paper](https://arxiv.org/abs/2605.14271)]
 - <u>AgentSWE</u>†: **"AgentSWE: Can Coding Agents Build the Agent You Actually Want?"**. *Wang et al.* arXiv 2026. [[Paper](https://arxiv.org/abs/2610.13361)]
+- <u>EC²-Bench</u>†: **"Empowering Edge Agents: A Systematic Analysis of Edge-Cloud Collaboration in LLM Agent Execution"**. *Huang et al.* arXiv 2026. [[Paper](https://arxiv.org/abs/2610.17816)] [[Code](https://github.com/OpenBMB/EC2-Bench)] [[Project](https://passionate11.github.io/ec2-bench-project-page/)]
 
 #### Protocol Standardization
 
