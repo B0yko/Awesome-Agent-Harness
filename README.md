@@ -212,6 +212,7 @@ The four featured systems above are joined by ten coding harnesses in the compar
 - **[LongHorizon-Harness](https://github.com/AMAP-ML/LongHorizon-Harness)** — A meta-harness that wraps existing coding agents in plan–act–verify, durable state, role isolation, audit, checkpoint, and recovery loops. [Paper](https://arxiv.org/abs/2608.01964)
 - **[Hermes Agent](https://github.com/nousresearch/hermes-agent)** — A persistent personal-agent runtime with memory, agent-created skills, multi-channel gateways, several sandbox backends, subagents, approvals, checkpoints, context compression, trajectories, and batch evaluation. [Docs](https://hermes-agent.nousresearch.com/docs/)
 - **[SandBase](https://github.com/sandbaseai/sandbase-harness)** — A local-first operations and security control plane with resumable sessions, audit and replay, MCP toolsets, credential and approval policy, several sandbox backends, typed SDKs, and conformance tests.
+- **[oh-my-agent](https://github.com/first-fluke/oh-my-agent)** — An open-source harness layered on existing coding agents that installs into 14 runtimes (Claude Code, Codex CLI, Cursor and others), links one `.agents/skills/` folder into each runtime's skill folder, and has an optional Stop hook that runs the project's typecheck, test or lint script before the agent finishes.
 
 #### Workplace and personal-agent harnesses
 
