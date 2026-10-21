@@ -212,6 +212,7 @@ README 沿用论文的论证顺序，而不是把项目堆成一份与综述脱�
 - **[LongHorizon-Harness](https://github.com/AMAP-ML/LongHorizon-Harness)** — 包裹在现有编程智能体外部的上层 harness，提供“规划—行动—验证”循环、持久状态、角色隔离、审计、检查点与恢复机制。[论文](https://arxiv.org/abs/2608.01964)
 - **[Hermes Agent](https://github.com/nousresearch/hermes-agent)** — 持久型个人智能体运行时，提供记忆、智能体自主创建技能、多渠道网关、多种沙箱后端、子智能体、审批、检查点、上下文压缩、执行轨迹与批量评测。[文档](https://hermes-agent.nousresearch.com/docs/)
 - **[SandBase](https://github.com/sandbaseai/sandbase-harness)** — 本地优先的运维与安全控制平面，提供可恢复会话、审计与重放、MCP 工具集、凭据与审批策略、多种沙箱后端、类型化 SDK 和一致性测试。
+- **[CUGA](https://github.com/cuga-project/cuga-agent)** — IBM Research 基于 LangGraph 构建的开源通用智能体 harness，在可配置策略（意图防护、流程指引、工具审批）下执行 API（OpenAPI、MCP、LangChain 工具）、Web 及混合任务，并支持技能、A2A 子智能体和 ACP。[论文](https://arxiv.org/abs/2510.23856)
 
 #### 办公与个人智能体 Harness
 
@@ -351,6 +352,7 @@ README 沿用论文的论证顺序，而不是把项目堆成一份与综述脱�
 - **[WebArena](https://github.com/web-arena-x/webarena)** — 使用真实网站和端到端任务评测自主 Web 智能体。
 - **[GAIA](https://arxiv.org/abs/2311.12983)** — 需要推理、工具使用与多模态信息的通用助手问题集。
 - **[SWE-bench](https://github.com/swe-bench/SWE-bench)** — 要求智能体在可执行代码仓库中解决真实 GitHub 问题。
+- **[EC2-Bench](https://github.com/OpenBMB/EC2-Bench)** — 由可调用云端模型的端侧模型执行 OpenClaw 工作区任务，比较由外部路由器或端侧智能体控制云端调用时的任务完成情况、成本与隐私暴露。[论文](https://arxiv.org/abs/2610.17816)
 
 ---
 
@@ -440,6 +442,7 @@ README 沿用论文的论证顺序，而不是把项目堆成一份与综述脱�
 - <u>WildClawBench</u>†: **"WildClawBench: A Benchmark for Real-World, Long-Horizon Agent Evaluation"**. *Ding et al.* arXiv 2026. [[论文](https://arxiv.org/abs/2605.10912)]
 - <u>HarnessAudit-Bench</u>†: **"Auditing Agent Harness Safety"**. *Liu et al.* arXiv 2026. [[论文](https://arxiv.org/abs/2605.14271)]
 - <u>AgentSWE</u>†: **"AgentSWE: Can Coding Agents Build the Agent You Actually Want?"**. *Wang et al.* arXiv 2026. [[论文](https://arxiv.org/abs/2610.13361)]
+- <u>EC2-Bench</u>†: **"Empowering Edge Agents: A Systematic Analysis of Edge-Cloud Collaboration in LLM Agent Execution"**. *Huang et al.* arXiv 2026. [[论文](https://arxiv.org/abs/2610.17816)] [[代码](https://github.com/OpenBMB/EC2-Bench)] [[项目](https://passionate11.github.io/ec2-bench-project-page/)]
 
 #### 协议标准化
 
