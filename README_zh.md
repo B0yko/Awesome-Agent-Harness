@@ -213,6 +213,7 @@ README 沿用论文的论证顺序，而不是把项目堆成一份与综述脱�
 - **[Hermes Agent](https://github.com/nousresearch/hermes-agent)** — 持久型个人智能体运行时，提供记忆、智能体自主创建技能、多渠道网关、多种沙箱后端、子智能体、审批、检查点、上下文压缩、执行轨迹与批量评测。[文档](https://hermes-agent.nousresearch.com/docs/)
 - **[SandBase](https://github.com/sandbaseai/sandbase-harness)** — 本地优先的运维与安全控制平面，提供可恢复会话、审计与重放、MCP 工具集、凭据与审批策略、多种沙箱后端、类型化 SDK 和一致性测试。
 - **[CUGA](https://github.com/cuga-project/cuga-agent)** — IBM Research 基于 LangGraph 构建的开源通用智能体 harness，在可配置策略（意图防护、流程指引、工具审批）下执行 API（OpenAPI、MCP、LangChain 工具）、Web 及混合任务，并支持技能、A2A 子智能体和 ACP。[论文](https://arxiv.org/abs/2510.23856)
+- **[oh-my-agent](https://github.com/first-fluke/oh-my-agent)** — 叠加在现有编程智能体之上的开源 harness，可安装到 Claude Code、Codex CLI、Cursor 等 14 种运行时，将统一的 `.agents/skills/` 目录中的技能共享给支持的运行时，并提供可选的 Stop 钩子，在智能体结束前运行项目的类型检查、测试或代码检查脚本。
 
 #### 办公与个人智能体 Harness
 
