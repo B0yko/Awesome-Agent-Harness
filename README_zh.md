@@ -346,6 +346,7 @@ README 沿用论文的论证顺序，而不是把项目堆成一份与综述脱�
 
 这些基准主要回答**智能体能完成什么任务**。Harness 研究将它们作为任务基础，并增加控制变量，以隔离运行时的影响。
 
+- **[RoboQuest](https://github.com/declare-lab/RoboQuest)** — 面向通过工具调用控制机器人的多模态 Agent 的仿真移动操作任务；隐藏信息须通过搜索、检查或测试获得。[论文](https://arxiv.org/abs/2610.10388)
 - **[AgencyBench](https://arxiv.org/abs/2601.11044)** — 面向自主智能体的长上下文、结果影响重大的任务；整体结果与原生生态优势的观察应分别报告。
 - **[ClawBench](https://github.com/TIGER-AI-Lab/ClawBench)** — 面向个人智能体和计算机操作智能体的日常在线任务。[论文](https://arxiv.org/abs/2604.08523)
 - **[OSWorld](https://github.com/xlang-ai/OSWorld)** — 真实操作系统环境中的开放式计算机任务。
