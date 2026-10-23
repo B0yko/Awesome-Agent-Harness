@@ -83,8 +83,10 @@ README 沿用论文的论证顺序，而不是把项目堆成一份与综述脱�
 我们用 **H = (E, T, C, S, L, V)** 分析 harness：这是公开系统中反复出现的六类治理功能，用于统一比较架构；产品质量和生产成熟度使用独立证据评估。
 
 <p align="center">
-  <img src="assets/architecture_diagram.png" width="720" alt="H=(E,T,C,S,L,V) 六组件分析框架"/>
+  <img src="assets/architecture_p2.png" width="960" alt="H=(E,T,C,S,L,V) 六组件分析框架"/>
 </p>
+
+L展示代表性生命周期介入点；V导出事件与轨迹，不承担结果打分。机器人仅为执行过程的示意符号。
 
 | 组件 | 符号 | 需要观察的内容 |
 |---|:---:|---|
@@ -100,8 +102,10 @@ README 沿用论文的论证顺序，而不是把项目堆成一份与综述脱�
 ## 2. 历史演进
 
 <p align="center">
-  <img src="assets/timeline.png" width="720" alt="Agent Harness 历史演进"/>
+  <img src="assets/timeline_p2.png" width="1080" alt="Agent Harness 历史演进"/>
 </p>
+
+本图选择性展示历史贡献，不是完整年表或首创断言。各列为类别时期，不代表等比例时间。论文采用所引出版年，软件与协议采用所引来源记录年，不表示首发；汇聚表示分析综合，不证明直接因果继承。下表保留更广的里程碑清单。
 
 | 年份 | 里程碑 | 对 Harness 的意义 |
 |---|---|---|
