@@ -12,6 +12,12 @@
 
 </div>
 
+<p align="center">
+  <a href="assets/architecture_p2.png"><img src="assets/architecture_p2.png" width="1100" alt="Agent harness architecture: execution, tools, context, state, lifecycle and evidence"/></a>
+</p>
+
+Harness统筹重复行动、上下文、状态与证据。L展示代表性生命周期介入点；V导出事件与轨迹，不承担结果打分。机器人为执行过程的示意符号。
+
 > **智能体能力产生于模型、harness 与环境的共同配置。** Harness 决定模型如何观察与行动、如何使用工具、管理上下文和状态、跨越权限边界、从失败中恢复，并为评测留下可核查的证据。
 
 这是综述论文 **《Agent Harness for Large Language Model Agents: A Survey》** 的官方仓库。论文是整个项目的中心：它界定研究对象，提出 ETCSLV 分析框架，梳理历史来源，比较代表系统，并组织评测版图与研究议程。下面的资源索引用于在论文版本之间持续维护这套证据基础。
@@ -82,12 +88,6 @@ README 沿用论文的论证顺序，而不是把项目堆成一份与综述脱�
 
 我们用 **H = (E, T, C, S, L, V)** 分析 harness：这是公开系统中反复出现的六类治理功能，用于统一比较架构；产品质量和生产成熟度使用独立证据评估。
 
-<p align="center">
-  <img src="assets/architecture_p2.png" width="960" alt="H=(E,T,C,S,L,V) 六组件分析框架"/>
-</p>
-
-L展示代表性生命周期介入点；V导出事件与轨迹，不承担结果打分。机器人仅为执行过程的示意符号。
-
 | 组件 | 符号 | 需要观察的内容 |
 |---|:---:|---|
 | 执行循环 | **E** | 轮次与步骤控制、终止、重试、恢复、任务委派 |
@@ -96,6 +96,12 @@ L展示代表性生命周期介入点；V导出事件与轨迹，不承担结果
 | 状态存储 | **S** | 跨轮次和跨会话持久化、检查点、恢复 |
 | 生命周期钩子 | **L** | 认证、审批、策略、插桩、拦截 |
 | 评测接口 | **V** | 执行轨迹、中间状态、结果、实验、审计 |
+
+<p align="center">
+  <a href="assets/step_state_p2.png"><img src="assets/step_state_p2.png" width="1000" alt="Illustrative tool-using execution path"/></a>
+</p>
+
+工具调用子路径示例：区分事件、条件、分发前授权、结果提交和有条件重试。不穷举直接完成、拒绝、取消或超时分支；泳道表示关联职责。
 
 ---
 
@@ -128,6 +134,12 @@ L展示代表性生命周期介入点；V导出事件与轨迹，不承担结果
 
 系统版图兼顾分析深度与覆盖广度：四个重点案例用于深入说明运行机制，证据矩阵按统一口径进行比较，分类目录则保留更广泛的系统、底层支撑、能力模块与评测基础设施。比较集依据证据门槛持续扩展；当前的 34 个系统是按照现行收录规则筛选的结果，并非预设数量，也不表示已经穷尽相关系统。产品形态本身不是排除条件：办公系统与个人智能体只要具有足够的公开架构证据，同样属于 harness 的研究对象。
 
+<p align="center">
+  <a href="assets/landscape_p2.png"><img src="assets/landscape_p2.png" width="1000" alt="Five runtime comparison groups and four adjacent analysis units"/></a>
+</p>
+
+34个比较系统按五个报告组组织（4／10／5／7／8）。除四个重点系统外，图内名称为代表例子。四类相邻分析单元不计入运行系统矩阵；类别归属不代表性能或安全性。
+
 ### 四个重点系统
 
 这四个系统是综述的重点案例，采用相同的分析框架和相近篇幅展开。它们分别回答同一个运行时问题：如何将模型调用转化为受治理、可持续且能够使用工具的工作过程。
@@ -140,6 +152,12 @@ L展示代表性生命周期介入点；V导出事件与轨迹，不承担结果
 ### 证据编码比较矩阵
 
 评分表示截至证据截止日期，公开材料能够证明的组件覆盖情况。产品质量、生产成熟度与采用情况分别判断；GitHub 星标数只作为采用情况的一个信号。
+
+<p align="center">
+  <a href="assets/component_matrix_p2.svg"><img src="assets/component_matrix_p2.svg" width="1000" alt="Documentation-backed component coverage for 34 systems"/></a>
+</p>
+
+与下表相同的34个系统及ETCSLV证据覆盖。图中单元格F／P／A／?分别表示完整／部分／明确缺失／尚未核实，组别代码另计。覆盖情况不是性能、质量或安全排名；单格细节可点击查看原图。
 
 **图例：**● **完整（Full）** — 内置能力且有文档证明 · ◐ **部分（Partial）** — 能力有限、可选或由官方扩展提供 · ○ **明确缺失（Absent）** — 第一方材料明确说明不具备 · ? **尚未核实（Unverified）** — 公开材料不足。
 
@@ -299,6 +317,12 @@ L展示代表性生命周期介入点；V导出事件与轨迹，不承担结果
 ## 4. 评测版图
 
 这里收录的基准必须能够揭示**围绕模型运行的系统**的某个方面，例如组件选择、跨时间状态、恢复、权限、审计、协议行为或评测基础设施。报告结果时，应同时说明模型、harness、环境、任务版本、预算和评测器。
+
+<p align="center">
+  <a href="assets/evaluation_attribution_p2.png"><img src="assets/evaluation_attribution_p2.png" width="1000" alt="Three sources of evaluation attribution risk"/></a>
+</p>
+
+环境漂移、任务歧义和harness耦合可能影响结果归因。图中为条件性的解释路径；跨列虚线表示交互，下方为控制与诊断建议，不表示已测得的效应大小。
 
 ### 1. Harness 效应
 
@@ -476,6 +500,13 @@ L展示代表性生命周期介入点；V导出事件与轨迹，不承担结果
 
 > **证据重点：**工具可靠性不只取决于工具数量。工具选择、类型契约、语义授权、结果校验和恢复策略会在执行循环中共同作用。
 
+<p align="center">
+  <a href="assets/tool_governance_p2.png"><img src="assets/tool_governance_p2.png" width="1000" alt="Tool governance across the execution lifecycle"/></a>
+</p>
+
+工具治理覆盖注册、选择、分发、执行、结果处理与恢复。格式有效不等于行动获权；返回内容仍不可信，沙箱取决于配置，日志不等于独立审计。
+
+
 - <u>CodeAct</u>: **"Executable Code Actions Elicit Better LLM Agents"**. *Wang et al.* ICML 2024. [[论文](https://arxiv.org/abs/2402.01030)] [[代码](https://github.com/xingyaoww/code-act)]
 - <u>Schema First</u>†: **"Schema First Tool APIs for LLM Agents: A Controlled Study of Tool Misuse, Recovery, and Budgeted Performance"**. *Sigdel & Baral.* arXiv 2026. [[论文](https://arxiv.org/abs/2603.13404)]
 - <u>ToolLLM</u>: **"ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs"**. *Qin et al.* ICLR 2024. [[论文](https://arxiv.org/abs/2307.16789)] [[代码](https://github.com/OpenBMB/ToolBench)]
@@ -523,6 +554,13 @@ L展示代表性生命周期介入点；V导出事件与轨迹，不承担结果
 
 > **证据重点：**[AgencyBench](https://arxiv.org/abs/2601.11044) 报告闭源模型整体表现为 48.4%，开源模型为 32.1%，并另行观察到部分专有系统的原生生态优势。48.4% 不是原生 SDK 的成功率。
 
+<p align="center">
+  <a href="assets/multi_agent_topology_p2.png"><img src="assets/multi_agent_topology_p2.png" width="1000" alt="Multi-agent coordination patterns and runtime responsibilities"/></a>
+</p>
+
+不同协同模式带来不同的身份、权限、状态一致性和证据责任。模式可以组合；仅有拓扑结构不代表权限分离、执行隔离或安全保证。
+
+
 - <u>AdaptOrch</u>†: **"AdaptOrch: Task-Adaptive Multi-Agent Orchestration in the Era of LLM Performance Convergence"**. *Yu.* arXiv 2026. [[论文](https://arxiv.org/abs/2602.16873)]
 - <u>SAGA</u>†: **"SAGA: A Security Architecture for Governing AI Agentic Systems"**. *Syros et al.* NDSS 2026. [[论文](https://arxiv.org/abs/2504.21034)]
 - <u>MAS-FIRE</u>†: **"MAS-FIRE: Fault Injection and Reliability Evaluation for LLM-Based Multi-Agent Systems"**. *Jia et al.* arXiv 2026. [[论文](https://arxiv.org/abs/2602.19843)]
@@ -550,6 +588,12 @@ L展示代表性生命周期介入点；V导出事件与轨迹，不承担结果
 ---
 
 ### Harness 架构与演化
+
+<p align="center">
+  <a href="assets/meta_harness_p2.png"><img src="assets/meta_harness_p2.png" width="1000" alt="Reported Meta-Harness code-evaluation-history feedback loop"/></a>
+</p>
+
+Meta-Harness通过候选harness代码、任务评测、执行轨迹与累积历史反馈后续提议。图示为harness层优化，不代表模型权重更新或无约束递归改进，也不作数值性能断言。
 
 - <u>AutoRef</u>†: **"AutoRef: Harness Optimization for Agentic Multi-Reference Image Generation"**. *Oshima et al.* arXiv 2026. [[论文](https://arxiv.org/abs/2609.35530)] [[代码](https://github.com/KuOnoda/AutoRef)]
 - <u>Harness Engineering for Language Agents</u>†: **"Harness Engineering for Language Agents: The Harness Layer as Control, Agency, and Runtime"**. *He et al.* Preprints 2026. [[论文](https://doi.org/10.20944/preprints202603.1756.v2)]
